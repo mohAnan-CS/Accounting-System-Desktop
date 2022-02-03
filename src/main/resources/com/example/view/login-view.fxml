@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="770.0" prefWidth="1533.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.LoginController">
+   <children>
+      <Text layoutX="351.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Company">
+         <font>
+            <Font name="System Bold" size="57.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="341.0" fitWidth="400.0" layoutX="211.0" layoutY="385.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/company.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="232.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MIS is a company that provides accounting services" wrappingWidth="270.228515625">
+         <font>
+            <Font name="System Italic" size="18.0" />
+         </font>
+      </Text>
+      <Text fill="GREY" layoutX="202.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MIS">
+         <font>
+            <Font name="System Bold" size="76.0" />
+         </font>
+      </Text>
+      <Line endX="100.0" endY="393.20001220703125" layoutX="655.0" layoutY="350.0" startX="100.0" startY="-307.6000061035156" strokeWidth="3.0" />
+      <Text layoutX="1111.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login">
+         <font>
+            <Font name="System Bold" size="40.0" />
+         </font>
+      </Text>
+      <VBox layoutX="980.0" layoutY="285.0" prefHeight="200.0" prefWidth="366.0" spacing="10.0" AnchorPane.leftAnchor="980.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="User Name">
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </Text>
+            <TextField fx:id="textFieldUserName" prefHeight="39.0" prefWidth="230.0" promptText="Enter your user name" style="-fx-background-radius: 20px;" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="User Password">
+               <VBox.margin>
+                  <Insets left="10.0" top="30.0" />
+               </VBox.margin>
+            </Text>
+            <TextField fx:id="textFieldUserPass" prefHeight="39.0" prefWidth="230.0" promptText="Enter your password" style="-fx-background-radius: 20px;" />
+         </children>
+      </VBox>
+      <Button layoutX="1063.0" layoutY="524.0" mnemonicParsing="false" onAction="#btnLoginOnAction" prefHeight="41.0" prefWidth="199.0" style="-fx-background-radius: 20px;" text="Login">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

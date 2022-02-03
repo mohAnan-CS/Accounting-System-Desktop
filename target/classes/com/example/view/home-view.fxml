@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="borderPaneHome" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="770.0" prefWidth="1533.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.HomeController">
+   <bottom>
+      <Pane prefHeight="95.0" prefWidth="1534.0" style="-fx-background-color: #A1A1A1;" BorderPane.alignment="CENTER">
+         <children>
+            <HBox layoutX="31.0" layoutY="18.0" prefHeight="60.0" prefWidth="1475.0" spacing="50.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#btnTransactionOnAction" prefHeight="58.0" prefWidth="172.0" style="-fx-background-radius: 20px;" text="Transaction">
+                     <graphic>
+                        <ImageView fitHeight="34.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../Images/transfer.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#btnFinancialOnAction" prefHeight="58.0" prefWidth="172.0" style="-fx-background-radius: 20px;" text="Financial statements">
+                     <graphic>
+                        <ImageView fitHeight="34.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../Images/financial-statement.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#btnTrialBalanceOnAction" prefHeight="58.0" prefWidth="172.0" style="-fx-background-radius: 20px;" text="Trial balance">
+                     <graphic>
+                        <ImageView fitHeight="34.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../Images/investments-balance.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#btnGeneralLedgerOnAction" prefHeight="58.0" prefWidth="172.0" style="-fx-background-radius: 20px;" text="General ledger">
+                     <graphic>
+                        <ImageView fitHeight="34.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../Images/ledger.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#btnGeneralJournalOnAction" prefHeight="56.0" prefWidth="172.0" style="-fx-background-radius: 20px;" text="General journal">
+                     <graphic>
+                        <ImageView fitHeight="34.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../Images/journal.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#btnSettingsOnAction" prefHeight="58.0" prefWidth="172.0" style="-fx-background-radius: 20px;" text="Settings">
+                     <graphic>
+                        <ImageView fitHeight="34.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../Images/settings (1).png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#btnUserSettingsOnAction" prefHeight="58.0" prefWidth="172.0" style="-fx-background-radius: 20px;" text="User Setting">
+                     <graphic>
+                        <ImageView fitHeight="34.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../Images/user (1).png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+   </bottom>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <StackPane fx:id="stackPane" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+         </children>
+      </AnchorPane>
+   </center>
+   <top>
+      <AnchorPane prefHeight="75.0" prefWidth="1534.0" style="-fx-background-color: #DFDFDF;" BorderPane.alignment="CENTER">
+         <children>
+            <Text layoutX="701.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="02:30 pm" wrappingWidth="130.40478515625">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Text>
+            <HBox layoutX="14.0" layoutY="9.0" prefHeight="43.0" prefWidth="200.0" spacing="15.0">
+               <children>
+                  <ImageView fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Images/user (2).png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mohammed Anan ( Manager )">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets bottom="5.0" top="10.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+            </HBox>
+            <Button layoutX="1375.0" layoutY="9.0" mnemonicParsing="false" onAction="#btnLogoutOnAction" prefHeight="42.0" prefWidth="124.0" style="-fx-background-radius: 20px;" text="   Log out">
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Images/logout.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+   </top>
+</BorderPane>
