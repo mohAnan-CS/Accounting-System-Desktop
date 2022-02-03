@@ -4,8 +4,11 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import sql.DataBaseConnection;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.SQLException;
 
 public class Main extends Application {
 
@@ -14,7 +17,12 @@ public class Main extends Application {
     public static Stage STAGE ;
 
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage stage) throws IOException, SQLException {
+        DataBaseConnection dataBaseConnection = new DataBaseConnection();
+        Connection connection = dataBaseConnection.getConn() ;
+        System.out.println(connection);
+        connection.close();
+
         STAGE = stage ;
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/view/login-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
@@ -22,6 +30,7 @@ public class Main extends Application {
         stage.setScene(scene);
         stage.setMaximized(true);
         stage.show();
+
     }
 
     public static void main(String[] args) {
