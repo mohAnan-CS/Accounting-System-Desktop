@@ -31,6 +31,7 @@ public class Main extends Application {
         stage.setMaximized(true);
         stage.show();
 
+        //
     }
 
     public static void main(String[] args) {
