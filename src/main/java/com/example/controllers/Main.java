@@ -28,7 +28,7 @@ public class Main extends Application {
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Account Program");
         stage.setScene(scene);
-        stage.setMaximized(true);
+        //stage.setFullScreen(true);
         stage.show();
 
         //
