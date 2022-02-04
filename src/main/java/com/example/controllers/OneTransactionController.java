@@ -5,7 +5,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+<<<<<<< HEAD
 import model.TransactionModel;
+=======
+
+>>>>>>> 84d7c1c8f9a77802357855bd8295bbf3e0105990
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
