@@ -25,40 +25,7 @@ public class OneTransactionController implements Initializable {
     @FXML
     private ComboBox comboBoxCredit;
 
-    @FXML
-    void btnSubmitOneTransactionOnAction() {
 
-
-
-    }
-
-    public void checkTextEmpty(){
-
-        if (textFieldDebit.getText().trim().isEmpty() && textFieldCredit.getText().isEmpty()){
-            showAlertError("debit and credit empty");
-        }
-        else if (textFieldDebit.getText().trim().isEmpty()){
-            showAlertError("debit is empty");
-        }
-        else if (textFieldCredit.getText().trim().isEmpty()){
-            showAlertError("credit is empty");
-        }
-
-    }
-
-    public void checkComboBoxEmpty(){
-
-        if (comboBoxCredit.getValue().equals(null) && comboBoxDebit.getValue().equals(null)){
-            showAlertError("combo box debit and credit empty");
-        }
-        else if (comboBoxDebit.getValue().equals(null)){
-            showAlertError("combo box debit is empty");
-        }
-        else if (comboBoxCredit.getValue().equals(null)){
-            showAlertError("combo box credit is empty");
-        }
-
-    }
 
     public void showAlertError(String errorMessage){
 
