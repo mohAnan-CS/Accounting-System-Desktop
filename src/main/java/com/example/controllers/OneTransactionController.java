@@ -6,6 +6,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import model.TransactionModel;
+
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -24,7 +25,48 @@ public class OneTransactionController implements Initializable {
     @FXML
     private ComboBox comboBoxCredit;
 
+
+
+//    public void checkTextEmpty(){
+//
+//        if (textFieldDebit.getText().trim().isEmpty() && textFieldCredit.getText().isEmpty()){
+//            showAlertError("debit and credit empty");
+//        }
+//        else if (textFieldDebit.getText().trim().isEmpty()){
+//            showAlertError("debit is empty");
+//        }
+//        else if (textFieldCredit.getText().trim().isEmpty()){
+//            showAlertError("credit is empty");
+//        }
+//
+//    }
+//
+//    public void checkComboBoxEmpty(){
+//
+//        if (comboBoxCredit.getValue().equals(null) && comboBoxDebit.getValue().equals(null)){
+//            showAlertError("combo box debit and credit empty");
+//        }
+//        else if (comboBoxDebit.getValue().equals(null)){
+//            showAlertError("combo box debit is empty");
+//        }
+//        else if (comboBoxCredit.getValue().equals(null)){
+//            showAlertError("combo box credit is empty");
+//        }
+//
+//    }
+
+    public void showAlertError(String errorMessage){
+
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText(null);
+        alert.setContentText(errorMessage);
+        alert.showAndWait();
+
+    }
+
     private Boolean checkTextEmpty = false, checkComboBoxEmpty = false, checkDebitCreditValid =false, checkComboBoxValid = false;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
