@@ -6,18 +6,9 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.sql.*;
 
 
-import model.Login;
-import model.TransactionModel;
-import sql.DataBaseConnection;
-
-import java.io.IOException;
-import java.sql.Connection;
 import java.sql.SQLException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 
 public class Main extends Application {
@@ -34,7 +25,7 @@ public class Main extends Application {
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Account Program");
         stage.setScene(scene);
-        stage.setMaximized(true);
+        //stage.setFullScreen(true);
         stage.show();
 
     }
@@ -43,8 +34,13 @@ public class Main extends Application {
 
         //launch();
 
+<<<<<<< HEAD
       TransactionModel t =  new TransactionModel();
        t.GetDebittAndCredit2(100,100,100,100,"Cash","Cash","Cash","Cash");
+=======
+//       TransactionModel t =  new TransactionModel();
+//       t.GetDebittAndCredit1(100,100,"Cash","Cash");
+>>>>>>> b72cd1b9839a93cda905b5a377e2c66e9819d52e
 
     }
 

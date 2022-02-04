@@ -1,13 +1,11 @@
 package model;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import sql.DataBaseConnection;
 
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.sql.*;
-public class Login {
+public class LoginModel {
 
     public static String FName;
     public static String LName;

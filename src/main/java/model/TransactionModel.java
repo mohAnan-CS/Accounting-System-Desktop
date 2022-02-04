@@ -22,11 +22,11 @@ public class TransactionModel {
         }
     }
 
-    public void GetDebittAndCredit1(double debitValue,double creditValue,String debitType,String creditType) throws SQLException {
+    public void getDebitCredit1(double debitValue,double creditValue,String debitType,String creditType) throws SQLException {
 
         DataBaseConnection db = new DataBaseConnection();
         Statement stmt = db.getConn().createStatement();
-        Login login = new Login();
+        LoginModel login = new LoginModel();
 
         ResultSet rs = stmt.executeQuery("SELECT relation FROM DebitCreditInfo;" );
         int max=0;
@@ -53,7 +53,7 @@ public class TransactionModel {
 
         DataBaseConnection db = new DataBaseConnection();
         Statement stmt = db.getConn().createStatement();
-        Login login = new Login();
+        LoginModel login = new LoginModel();
 
         ResultSet rs = stmt.executeQuery("SELECT relation FROM DebitCreditInfo;" );
         int max=0;
