@@ -43,8 +43,8 @@ public class Main extends Application {
 
         //launch();
 
-       TransactionModel t =  new TransactionModel();
-       t.GetDebittAndCredit1(100,100,"Cash","Cash");
+      TransactionModel t =  new TransactionModel();
+       t.GetDebittAndCredit2(100,100,100,100,"Cash","Cash","Cash","Cash");
 
     }
 
