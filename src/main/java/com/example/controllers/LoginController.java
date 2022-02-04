@@ -9,7 +9,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import model.LoginModel;
-
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -43,7 +42,7 @@ public class LoginController implements Initializable {
             LoginModel loginModel = new LoginModel();
             int userId = Integer.parseInt(textFieldUserId.getText().trim());
             String userPass = textFieldUserPass.getText().trim();
-            boolean checkLogIn = loginModel.checkLogin(userId, userPass);
+            boolean checkLogIn = loginModel.checkLogin(userId,userPass);
 
             if (checkLogIn)
                 switchStage();
