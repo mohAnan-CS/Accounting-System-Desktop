@@ -6,7 +6,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
+import javafx.scene.text.Text;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -14,7 +17,21 @@ import java.util.ResourceBundle;
 public class HomeController implements Initializable {
 
     @FXML
+    private Button btnTransaction;
+
+    @FXML
+    private Button btnUserSetting;
+
+    @FXML
     private StackPane stackPane;
+
+    @FXML
+    private Text textUserName;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
 
     @FXML
     void btnFinancialOnAction(ActionEvent event) throws IOException{
@@ -93,9 +110,6 @@ public class HomeController implements Initializable {
 
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
 
-    }
 
 }

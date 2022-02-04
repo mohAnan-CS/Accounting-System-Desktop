@@ -22,7 +22,7 @@
       </Text>
       <ImageView fitHeight="279.0" fitWidth="337.0" layoutX="1076.0" layoutY="273.0" opacity="0.12" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../Images/settings%20(1).png" />
+            <Image url="@../../../Images/settings (1).png" />
          </image>
       </ImageView>
       <Line endX="-100.0" endY="352.5999755859375" layoutX="952.0" layoutY="198.0" startX="-100.0" startY="-135.0" strokeWidth="3.0" />
