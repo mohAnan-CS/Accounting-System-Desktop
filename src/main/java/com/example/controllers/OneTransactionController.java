@@ -26,35 +26,6 @@ public class OneTransactionController implements Initializable {
     private ComboBox comboBoxCredit;
 
 
-
-//    public void checkTextEmpty(){
-//
-//        if (textFieldDebit.getText().trim().isEmpty() && textFieldCredit.getText().isEmpty()){
-//            showAlertError("debit and credit empty");
-//        }
-//        else if (textFieldDebit.getText().trim().isEmpty()){
-//            showAlertError("debit is empty");
-//        }
-//        else if (textFieldCredit.getText().trim().isEmpty()){
-//            showAlertError("credit is empty");
-//        }
-//
-//    }
-//
-//    public void checkComboBoxEmpty(){
-//
-//        if (comboBoxCredit.getValue().equals(null) && comboBoxDebit.getValue().equals(null)){
-//            showAlertError("combo box debit and credit empty");
-//        }
-//        else if (comboBoxDebit.getValue().equals(null)){
-//            showAlertError("combo box debit is empty");
-//        }
-//        else if (comboBoxCredit.getValue().equals(null)){
-//            showAlertError("combo box credit is empty");
-//        }
-//
-//    }
-
     public void showAlertError(String errorMessage){
 
         Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -98,7 +69,7 @@ public class OneTransactionController implements Initializable {
             String debitType = (String) comboBoxDebit.getSelectionModel().getSelectedItem(),
                     creditType = (String) comboBoxCredit.getSelectionModel().getSelectedItem();
 
-            transactionModel.getDebitCredit1(debitValue, creditValue, debitType, creditType);
+            transactionModel.storeDebitCredit1(debitValue, creditValue, debitType, creditType);
 
         }catch (SQLException sqlException){
             showAlert("Error" , "ERROR" , sqlException.getMessage());
@@ -109,6 +80,7 @@ public class OneTransactionController implements Initializable {
     private void populateComboBoxes(){
 
         try {
+            System.out.println("combo box");
             TransactionModel transactionModel = new TransactionModel();
             transactionModel.fillComboBox(comboBoxDebit , comboBoxCredit);
         }catch (SQLException sqlException){
