@@ -4,6 +4,9 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import model.GeneralJournalModel;
+import model.TransactionModel;
+import model.UserSettingModel;
 
 import java.io.IOException;
 
@@ -33,14 +36,15 @@ public class Main extends Application {
     public static void main(String[] args) throws SQLException {
 
         //launch();
+        UserSettingModel s = new UserSettingModel();
+        s.AddUser(134432,"Obada","Jaras","123","05980284","birzeit","CUST",12422);
 
-<<<<<<< HEAD
-      TransactionModel t =  new TransactionModel();
-       t.GetDebittAndCredit2(100,100,100,100,"Cash","Cash","Cash","Cash");
-=======
+//      TransactionModel t =  new TransactionModel();
+//       t.GetDebittAndCredit2(100,100,100,100,"Cash","Cash","Cash","Cash");
+
 //       TransactionModel t =  new TransactionModel();
 //       t.GetDebittAndCredit1(100,100,"Cash","Cash");
->>>>>>> b72cd1b9839a93cda905b5a377e2c66e9819d52e
+
 
     }
 

@@ -27,20 +27,7 @@ public class OneTransactionController implements Initializable {
     @FXML
     void btnSubmitOneTransactionOnAction() {
 
-        checkTextEmpty();
-        checkComboBoxEmpty();
 
-        DebitCreditInfo debitCreditInfo = new DebitCreditInfo("Mohammed anan" , "12/12/2022" ,
-                Double.parseDouble(textFieldDebit.getText().trim()) , Double.parseDouble(textFieldCredit.getText().trim()) , comboBoxDebit.getValue().toString() ,
-                 comboBoxCredit.getValue().toString());
-        DebitCredit debitCredit = new DebitCredit();
-        debitCredit.storeDebitCredit(debitCreditInfo);
-
-        ArrayList arrayList = new ArrayList();
-        arrayList = debitCredit.getArrayListDebitCredit();
-        for (int i = 0 ; i< arrayList.size() ; i++){
-            System.out.println(arrayList.get(i));
-        }
 
     }
 
