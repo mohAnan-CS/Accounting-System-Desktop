@@ -6,7 +6,9 @@ module AccountingProgram {
     requires mysql.connector.java;
     requires java.sql;
 
+    opens sql;
     opens com.example.controllers ;
     opens model;
+
 
 }
