@@ -34,13 +34,7 @@ public class Main extends Application {
 
         launch();
 
-<<<<<<< HEAD
-      TransactionModel t =  new TransactionModel();
-       t.GetDebittAndCredit2(100,100,100,100,"Cash","Cash","Cash","Cash");
-=======
-//       TransactionModel t =  new TransactionModel();
-//       t.GetDebittAndCredit1(100,100,"Cash","Cash");
->>>>>>> b72cd1b9839a93cda905b5a377e2c66e9819d52e
+
 
     }
 
