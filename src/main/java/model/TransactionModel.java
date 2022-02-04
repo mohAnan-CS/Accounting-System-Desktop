@@ -10,7 +10,7 @@ import java.time.format.DateTimeFormatter;
 
 public class TransactionModel {
 
-    public void fillComboBox(ComboBox comboBox) throws SQLException {
+    public void fillComboBox(ComboBox comboBoxDebit , ComboBox comboBoxCredit) throws SQLException {
 
         DataBaseConnection db = new DataBaseConnection();
         ObservableList list = FXCollections.observableArrayList();
@@ -19,7 +19,28 @@ public class TransactionModel {
         ResultSet rs = stmt.executeQuery("SELECT accountRef, accountName FROM account;" );
         while (rs.next()) {
             String accountName = rs.getString("accountName");
+            list.add(accountName);
         }
+        comboBoxDebit.setItems(list);
+        comboBoxCredit.setItems(list);
+    }
+
+    public void fillComboBox(ComboBox comboBoxDebit , ComboBox comboBoxRemainDebit, ComboBox comboBoxCredit , ComboBox comboBoxRemainCredit) throws SQLException {
+
+        DataBaseConnection db = new DataBaseConnection();
+        ObservableList list = FXCollections.observableArrayList();
+
+        Statement stmt = db.getConn().createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT accountRef, accountName FROM account;" );
+        while (rs.next()) {
+            String accountName = rs.getString("accountName");
+            list.add(accountName);
+        }
+
+        comboBoxDebit.setItems(list);
+        comboBoxRemainDebit.setItems(list);
+        comboBoxCredit.setItems(list);
+        comboBoxRemainCredit.setItems(list);
     }
 
     public void getDebitCredit1(double debitValue,double creditValue,String debitType,String creditType) throws SQLException {

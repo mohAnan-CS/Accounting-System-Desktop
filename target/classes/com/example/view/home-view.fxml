@@ -18,7 +18,7 @@
          <children>
             <HBox layoutX="31.0" layoutY="18.0" prefHeight="60.0" prefWidth="1475.0" spacing="50.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#btnTransactionOnAction" prefHeight="58.0" prefWidth="172.0" style="-fx-background-radius: 20px;" text="Transaction">
+                  <Button fx:id="btnTransaction" mnemonicParsing="false" onAction="#btnTransactionOnAction" prefHeight="58.0" prefWidth="172.0" style="-fx-background-radius: 20px;" text="Transaction">
                      <graphic>
                         <ImageView fitHeight="34.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -72,7 +72,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#btnUserSettingsOnAction" prefHeight="58.0" prefWidth="172.0" style="-fx-background-radius: 20px;" text="User Setting">
+                  <Button fx:id="btnUserSetting" mnemonicParsing="false" onAction="#btnUserSettingsOnAction" prefHeight="58.0" prefWidth="172.0" style="-fx-background-radius: 20px;" text="User Setting">
                      <graphic>
                         <ImageView fitHeight="34.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -111,7 +111,7 @@
                         <Insets top="5.0" />
                      </HBox.margin>
                   </ImageView>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mohammed Anan ( Manager )">
+                  <Text fx:id="textUserName" strokeType="OUTSIDE" strokeWidth="0.0" text="Mohammed Anan ( Manager )">
                      <font>
                         <Font size="16.0" />
                      </font>

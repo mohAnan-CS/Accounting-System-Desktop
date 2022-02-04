@@ -32,7 +32,7 @@ public class Main extends Application {
 
     public static void main(String[] args) throws SQLException {
 
-        //launch();
+        launch();
 
 //       TransactionModel t =  new TransactionModel();
 //       t.GetDebittAndCredit1(100,100,"Cash","Cash");
