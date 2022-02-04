@@ -36,6 +36,7 @@ public class Main extends Application {
     public static void main(String[] args) throws SQLException {
 
 
+
         //launch();
 //        UserSettingModel s = new UserSettingModel();
 //        s.AddUser(134432,"Obada","Jaras","123","05980284","birzeit","CUST",12422);
@@ -43,11 +44,15 @@ public class Main extends Application {
 //      TransactionModel t =  new TransactionModel();
 //       t.GetDebittAndCredit2(100,100,100,100,"Cash","Cash","Cash","Cash");
 
+
         launch();
 
 
-//       TransactionModel t =  new TransactionModel();
-//       t.GetDebittAndCredit1(100,100,"Cash","Cash");
+
+        launch();
+
+
+
 
 
     }

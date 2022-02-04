@@ -15,11 +15,11 @@ public class UserSettingModel {
                 "VALUES ("+id+",'"+FirstName+"','"+LastName+"','"+pass+"','"+permission+"',"+salary+",'Working','"+address+"','"+Phone+"');");
 
     }
-    public void edit (int id,String FirstName,String LastName,String pass,String Phone ,String address,String permission,double salary,String state) throws SQLException {
+    public void edit(int id,String FirstName,String LastName,String pass,String Phone ,String address,String permission,double salary,String state) throws SQLException {
 
         DataBaseConnection db = new DataBaseConnection();
         Statement stmt = db.getConn().createStatement();
-        stmt.executeUpdate("UPDATE user SET user_first_name = '"+FirstName+"', user_last_name = '"+LastName+"', user_pass = '"+pass+"', user_permission = '"+permission+"', user_salary = "+salary+", User_state ='"+state+"' , Address = '"+address+"','"+Phone+"' WHERE user_id = 134432;");
+        stmt.executeUpdate("UPDATE user SET user_first_name = '"+FirstName+"', user_last_name = '"+LastName+"', user_pass = '"+pass+"', user_permission = '"+permission+"', user_salary = "+salary+", User_state ='"+state+"' , Address = '"+address+"','"+Phone+"' WHERE user_id = "+id+";");
 
     }
 }
