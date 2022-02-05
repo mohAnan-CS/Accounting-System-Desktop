@@ -36,9 +36,6 @@ public class Main extends Application {
     public static void main(String[] args) throws SQLException {
 
 
-
-
-
         launch();
 //        UserSettingModel s = new UserSettingModel();
 //        s.AddUser(134432,"Obada","Jaras","123","05980284","birzeit","CUST",12422);

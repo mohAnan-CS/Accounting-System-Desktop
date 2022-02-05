@@ -7,12 +7,12 @@ import java.sql.Statement;
 import java.sql.*;
 public class LoginModel {
 
-    public static String FName;
-    public static String LName;
-    public static String permission;
-    public static String id;
+    public  String FName;
+    public  String LName;
+    public  String permission;
+    public  String id;
 
-    public static boolean checkLogin(int ID,String Password) throws SQLException {
+    public boolean checkLogin(int ID,String Password) throws SQLException {
 
         DataBaseConnection db = new DataBaseConnection();
         Statement stmt = db.getConn().createStatement();

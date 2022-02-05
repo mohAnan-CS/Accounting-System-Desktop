@@ -65,4 +65,5 @@ public class GeneralJournalController implements Initializable {
         listJournal.add(journalLedger2);
 
     }
+
 }

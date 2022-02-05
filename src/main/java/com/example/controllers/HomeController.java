@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
+import model.LoginModel;
 
 import java.io.IOException;
 import java.net.URL;
@@ -31,7 +32,20 @@ public class HomeController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+
+
     }
+
+    private static void setTextUserName(){
+
+        LoginModel loginModel = new LoginModel();
+        String userFirstName = loginModel.FName ;
+        String userLastName = loginModel.LName ;
+        String userPermission = loginModel.permission ;
+
+    }
+
+    private void che
 
     @FXML
     void btnFinancialOnAction(ActionEvent event) throws IOException{
