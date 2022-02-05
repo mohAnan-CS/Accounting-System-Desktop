@@ -4,9 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import model.GeneralJournalModel;
-import model.TransactionModel;
-import model.UserSettingModel;
+import model.GeneralLedgerModel;
 
 import java.io.IOException;
 

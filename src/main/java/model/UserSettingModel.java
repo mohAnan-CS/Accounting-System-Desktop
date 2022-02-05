@@ -22,4 +22,12 @@ public class UserSettingModel {
         stmt.executeUpdate("UPDATE user SET user_first_name = '"+FirstName+"', user_last_name = '"+LastName+"', user_pass = '"+pass+"', user_permission = '"+permission+"', user_salary = "+salary+", User_state ='"+state+"' , Address = '"+address+"','"+Phone+"' WHERE user_id = "+id+";");
 
     }
+
+    public void delete(int id) throws SQLException {
+        DataBaseConnection db = new DataBaseConnection();
+        Statement stmt = db.getConn().createStatement();
+        stmt.executeUpdate("UPDATE user SET User_state ='Deactive' WHERE user_id = "+id+" ");
+
+    }
+
 }
