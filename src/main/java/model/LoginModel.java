@@ -12,7 +12,7 @@ public class LoginModel {
     public static String permission;
     public static String id;
 
-    public boolean checkLogin(int ID,String Password) throws SQLException {
+    public static boolean checkLogin(int ID,String Password) throws SQLException {
 
         DataBaseConnection db = new DataBaseConnection();
         Statement stmt = db.getConn().createStatement();

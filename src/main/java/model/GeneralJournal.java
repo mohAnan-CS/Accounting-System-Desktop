@@ -9,7 +9,15 @@ public class GeneralJournal {
 
     String AccountName,date,name,type;
     double value;
-    int id;
+    int id,relation;
+
+    public int getRelation() {
+        return relation;
+    }
+
+    public void setRelation(int relation) {
+        this.relation = relation;
+    }
 
     @Override
     public String toString() {
@@ -20,10 +28,11 @@ public class GeneralJournal {
                 ", type='" + type + '\'' +
                 ", value=" + value +
                 ", id=" + id +
+                ", relation=" + relation +
                 '}';
     }
 
-    public GeneralJournal(String AccountName, String date, String name, String type, double value, int id) {
+    public GeneralJournal(String AccountName, String date, String name, String type, double value, int id,int relation) {
 
         this.AccountName = AccountName;
         this.date = date;
@@ -31,6 +40,7 @@ public class GeneralJournal {
         this.type = type;
         this.value = value;
         this.id = id;
+        this.relation = relation;
     }
 
     public String getAccountName() {

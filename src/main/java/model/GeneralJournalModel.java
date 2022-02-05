@@ -16,11 +16,12 @@ public class GeneralJournalModel {
 
         DataBaseConnection db = new DataBaseConnection();
         Statement stmt = db.getConn().createStatement();
-        ResultSet rs = stmt.executeQuery("select u.user_id, u.user_first_name, u.user_last_name, d.dates, d.accountName, d.amount, d.typ from user u ,DebitCreditInfo d where d.userid = u.user_id;" );
+        ResultSet rs = stmt.executeQuery("select u.user_id, u.user_first_name, u.user_last_name, d.dates, d.accountName, d.amount, d.typ,d.relation from user u ,DebitCreditInfo d where d.userid = u.user_id;" );
 
         while (rs.next()) {
 
             int user_id = rs.getInt("user_id");
+            int relation = rs.getInt("relation");
             String user_first_name = rs.getString("user_first_name");
             String user_last_name = rs.getString("user_last_name");
             String name = user_first_name +" "+user_last_name;
@@ -29,7 +30,7 @@ public class GeneralJournalModel {
             double amount = rs.getDouble("amount");
             String typ = rs.getString("typ");
 
-            GeneralJournal gj = new GeneralJournal(accountName,dates,name,typ,amount,user_id);
+            GeneralJournal gj = new GeneralJournal(accountName,dates,name,typ,amount,user_id,relation);
             list.add(gj);
             System.out.println(gj.toString());
         }

@@ -28,6 +28,7 @@ public class OneTransactionController implements Initializable {
 
 
 
+
 //    public void checkTextEmpty(){
 //
 //        if (textFieldDebit.getText().trim().isEmpty() && textFieldCredit.getText().isEmpty()){
@@ -55,6 +56,7 @@ public class OneTransactionController implements Initializable {
 //        }
 //
 //    }
+
 
     public void showAlertError(String errorMessage){
 
@@ -99,7 +101,7 @@ public class OneTransactionController implements Initializable {
             String debitType = (String) comboBoxDebit.getSelectionModel().getSelectedItem(),
                     creditType = (String) comboBoxCredit.getSelectionModel().getSelectedItem();
 
-            transactionModel.getDebitCredit1(debitValue, creditValue, debitType, creditType);
+            transactionModel.storeDebitCredit1(debitValue, creditValue, debitType, creditType);
 
         }catch (SQLException sqlException){
             showAlert("Error" , "ERROR" , sqlException.getMessage());
@@ -110,6 +112,7 @@ public class OneTransactionController implements Initializable {
     private void populateComboBoxes(){
 
         try {
+            System.out.println("combo box");
             TransactionModel transactionModel = new TransactionModel();
             transactionModel.fillComboBox(comboBoxDebit , comboBoxCredit);
         }catch (SQLException sqlException){

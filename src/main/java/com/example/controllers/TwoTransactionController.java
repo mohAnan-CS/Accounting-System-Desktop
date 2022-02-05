@@ -41,29 +41,50 @@ public class TwoTransactionController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-
+        try {
+            populateComboBoxes();
+        } catch (SQLException e) {
+            showAlert("Error" , "ERROR" , e.getMessage());
+        }
 
     }
 
     @FXML
     void btnSubmitOnAction() {
 
-        checkTextEmpty();
-        if (!checkTextEmpty)
-            return;
-        checkComboBoxEmpty();
-        if (!checkComboBoxEmpty)
-            return;
-        checkDebitCreditValid();
-        if (!checkDebitCreditValid)
-            return;
-        checkComboBoxValid();
-        if(!checkComboBoxValid)
-            return;
+        try {
 
-        TransactionModel transactionModel = new TransactionModel();
+            checkTextEmpty();
+            if (!checkTextEmpty)
+                return;
+            checkComboBoxEmpty();
+            if (!checkComboBoxEmpty)
+                return;
+            checkDebitCreditValid();
+            if (!checkDebitCreditValid)
+                return;
+            checkComboBoxValid();
+            if (!checkComboBoxValid)
+                return;
+
+            TransactionModel transactionModel = new TransactionModel();
+
+            double debitValue = Double.parseDouble(textFieldDebit2.getText().trim()),
+                    debitRemainValue = Double.parseDouble(textFieldRemainDebit2.getText().trim()),
+                    creditValue = Double.parseDouble(textFieldCredit2.getText().trim()),
+                    creditRemainValue = Double.parseDouble(textFieldRemainCredit2.getText().trim());
+            String creditType = (String) comboBoxCredit2.getSelectionModel().getSelectedItem(),
+                    creditRemainType = (String) comboBoxRemainCredit2.getSelectionModel().getSelectedItem(),
+                    debitType = (String) comboBoxDebit2.getSelectionModel().getSelectedItem(),
+                    debitRemainType = (String) comboBoxRemainDebit2.getSelectionModel().getSelectedItem();
 
 
+            transactionModel.storeDebitCredit2(debitValue, creditValue, debitRemainValue, creditRemainValue,
+                    creditRemainType, debitRemainType, debitType, creditType);
+
+        }catch (SQLException sqlException){
+            showAlert("Error" , "ERROR" , sqlException.getMessage());
+        }
 
     }
 
@@ -125,10 +146,19 @@ public class TwoTransactionController implements Initializable {
 
         try {
 
-            int debitValue = Integer.parseInt(textFieldDebit2.getText().trim());
-            int creditValue = Integer.parseInt(textFieldCredit2.getText().trim());
+            int debitValue = Integer.parseInt(textFieldDebit2.getText().trim()),
+                    creditValue = Integer.parseInt(textFieldCredit2.getText().trim()) ,
+                    debitRemainValue = Integer.parseInt(textFieldRemainDebit2.getText().trim()) ,
+                    creditRemainValue = Integer.parseInt(textFieldRemainCredit2.getText().trim()) ,
+                    sumDebit , sumCredit;
 
-            if (debitValue != creditValue) {
+            sumDebit = debitValue + debitRemainValue ;
+            sumCredit = creditValue + creditRemainValue ;
+
+            System.out.println("Sum debit = " + sumDebit);
+            System.out.println("Sum credit = " + sumCredit);
+
+            if (sumCredit != sumDebit) {
                 checkDebitCreditValid = false ;
                 throw new IllegalArgumentException("Debit value must be equal Credit value");
             }else
@@ -152,6 +182,7 @@ public class TwoTransactionController implements Initializable {
             String temp = debitTypeAccount;
 
             for (int i = 1; i < arrayComboBox.length; i++) {
+                System.out.println("hi");
                 if (temp.equalsIgnoreCase(arrayComboBox[i])) {
                     checkComboBoxValid=false;
                     throw new IllegalArgumentException("duplicate of type account");
