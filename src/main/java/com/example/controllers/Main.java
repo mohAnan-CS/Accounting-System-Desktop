@@ -36,25 +36,7 @@ public class Main extends Application {
 
 
         launch();
-       // GeneralLedgerModel g = new GeneralLedgerModel();
-       // g.Fun();
-       // System.out.println( g.Search("cash").get(0) );
-//        UserSettingModel s = new UserSettingModel();
-//        s.AddUser(134432,"Obada","Jaras","123","05980284","birzeit","CUST",12422);
-
-//      TransactionModel t =  new TransactionModel();
-//       t.GetDebittAndCredit2(100,100,100,100,"Cash","Cash","Cash","Cash");
-
-//        TransactionModel transactionModel = new TransactionModel();
-//        transactionModel.storeDebitCredit2(0 , 1,1 ,1 , "cash"
-//                , "owner" , "supplies" , "ws");
-
-
-
-
-
-
-
+        
 
     }
 
