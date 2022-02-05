@@ -4,9 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import model.GeneralJournalModel;
-import model.TransactionModel;
-import model.UserSettingModel;
+import model.GeneralLedgerModel;
 
 import java.io.IOException;
 
@@ -38,7 +36,9 @@ public class Main extends Application {
 
 
         launch();
-
+       // GeneralLedgerModel g = new GeneralLedgerModel();
+       // g.Fun();
+       // System.out.println( g.Search("cash").get(0) );
 //        UserSettingModel s = new UserSettingModel();
 //        s.AddUser(134432,"Obada","Jaras","123","05980284","birzeit","CUST",12422);
 
