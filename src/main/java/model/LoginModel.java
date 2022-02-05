@@ -7,10 +7,10 @@ import java.sql.Statement;
 import java.sql.*;
 public class LoginModel {
 
-    public  String FName;
-    public  String LName;
-    public  String permission;
-    public  String id;
+    public static String FName;
+    public static String LName;
+    public static String permission;
+    public static String id;
 
     public boolean checkLogin(int ID,String Password) throws SQLException {
 
@@ -24,15 +24,19 @@ public class LoginModel {
             FName = rs.getString("user_first_name");
             LName  = rs.getString("user_last_name");
             permission = rs.getString("user_permission");
+
            c++;
         }
+        System.out.println("c = " + c);
         if (c == 0){
+            System.out.println("if statement");
             FName = null;
             LName = null;
             permission = null;
             return false;
         }
         else {
+            System.out.println("else statement");
            return true;
         }
     }

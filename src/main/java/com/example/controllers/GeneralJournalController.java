@@ -1,5 +1,6 @@
 package com.example.controllers;
 
+import com.example.controllers.TableViewClass.GeneralJournalTableView;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -7,63 +8,133 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import model.JournalLedger;
+import model.GeneralJournal;
+import model.GeneralJournalModel;
 
 import java.net.URL;
-import java.util.List;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class GeneralJournalController implements Initializable {
 
     @FXML
-    private TableView<JournalLedger> tableViewJournalLedger;
+    private TableView<GeneralJournalTableView> tableViewJournalLedger;
 
     @FXML
-    private TableColumn<JournalLedger, String> dateCell;
+    private TableColumn<GeneralJournalTableView, String> dateCell;
 
     @FXML
-    private TableColumn<JournalLedger, String> accountTypeCell;
+    private TableColumn<GeneralJournalTableView, String> accountTypeCell;
 
     @FXML
-    private TableColumn<JournalLedger, String> refCell;
+    private TableColumn<GeneralJournalTableView, String> userIdCell;
 
     @FXML
-    private TableColumn<JournalLedger, String> debitCell;
+    private TableColumn<GeneralJournalTableView, String> userNameCell;
 
     @FXML
-    private TableColumn<JournalLedger, String> creditCell;
+    private TableColumn<GeneralJournalTableView, String> debitCell;
 
-    ObservableList<JournalLedger> listJournal = FXCollections.observableArrayList();
+    @FXML
+    private TableColumn<GeneralJournalTableView, String> creditCell;
+
+    ObservableList<GeneralJournal> lisGeneralJournal = FXCollections.observableArrayList();
+    ObservableList<GeneralJournalTableView> list = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        fillJournalList();
-        setAllCellValueFactory();
+        try {
+            setAllCellValueFactory();
+            fillJournalList();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
 
     }
 
     public void setAllCellValueFactory(){
 
-        //this.billTabelPaymentAmount.setCellValueFactory(new PropertyValueFactory("payAmount"));
+
 
         this.dateCell.setCellValueFactory(new PropertyValueFactory<>("date"));
-        this.accountTypeCell.setCellValueFactory(new PropertyValueFactory<>("accountType"));
-        this.refCell.setCellValueFactory(new PropertyValueFactory<>("ref"));
+        this.accountTypeCell.setCellValueFactory(new PropertyValueFactory<>("type"));
+        this.userIdCell.setCellValueFactory(new PropertyValueFactory<>("id"));
         this.debitCell.setCellValueFactory(new PropertyValueFactory<>("debit"));
         this.creditCell.setCellValueFactory(new PropertyValueFactory<>("credit"));
+        this.userNameCell.setCellValueFactory(new PropertyValueFactory<>("name"));
 
-        tableViewJournalLedger.setItems(listJournal);
+
     }
 
-    private void fillJournalList(){
+    private void fillJournalList()throws SQLException {
+
+        GeneralJournalModel generalJournalModel = new GeneralJournalModel();
+        lisGeneralJournal = generalJournalModel.getGeneralJournalInformation();
+
+        System.out.println();
+        System.out.println("-------------------");
+        System.out.println();
+
+        //ObservableList<GeneralJournalTableView> list = FXCollections.observableArrayList();
+        int relation = 1 ;
+        for (int i = 0  ; i < lisGeneralJournal.size() ; i++){
 
 
-        JournalLedger journalLedger = new JournalLedger("10/1/2002" , "cash" , "101" , "192" , "");
-        JournalLedger journalLedger2 = new JournalLedger("" , "owner" , "103" , "" , "192");
-        listJournal.add(journalLedger);
-        listJournal.add(journalLedger2);
+            if (lisGeneralJournal.get(i).getRelation() != relation){
+
+                GeneralJournalTableView generalJournalTableView =
+                        new GeneralJournalTableView("" ,"" , "" , "" , "" , "");
+                list.add(generalJournalTableView);
+                relation = relation + 1 ;
+                System.out.println("-------------------------");
+
+            }
+
+            //System.out.println(lisGeneralJournal.get(i).toString());
+            if (lisGeneralJournal.get(i).getType().equalsIgnoreCase("debit")){
+                System.out.println("date = "+lisGeneralJournal.get(i).getDate());
+                System.out.println("account type " + lisGeneralJournal.get(i).getAccountName());
+                System.out.println("user id " + lisGeneralJournal.get(i).getId());
+                System.out.println("user name " + lisGeneralJournal.get(i).getName());
+                System.out.println("debit " + lisGeneralJournal.get(i).getValue());
+                System.out.println("credit = null" );
+                GeneralJournalTableView generalJournalTableView =
+                        new GeneralJournalTableView(lisGeneralJournal.get(i).getDate() ,
+                                lisGeneralJournal.get(i).getAccountName() ,
+                                lisGeneralJournal.get(i).getName() ,
+                                String.valueOf(lisGeneralJournal.get(i).getId()),
+                                String.valueOf(lisGeneralJournal.get(i).getValue()) ,
+                                "");
+                list.add(generalJournalTableView);
+
+
+            }else{
+
+                System.out.println("date = "+lisGeneralJournal.get(i).getDate());
+                System.out.println("account type " + lisGeneralJournal.get(i).getAccountName());
+                System.out.println("user id " + lisGeneralJournal.get(i).getId());
+                System.out.println("user name " + lisGeneralJournal.get(i).getName());
+                System.out.println("debit null");
+                System.out.println("credit = " + lisGeneralJournal.get(i).getValue());
+                GeneralJournalTableView generalJournalTableView =
+                        new GeneralJournalTableView(lisGeneralJournal.get(i).getDate() ,
+                                lisGeneralJournal.get(i).getAccountName() ,
+                                lisGeneralJournal.get(i).getName() ,
+                                String.valueOf(lisGeneralJournal.get(i).getId()),
+                                "" ,
+                                String.valueOf(lisGeneralJournal.get(i).getValue()));
+
+                list.add(generalJournalTableView);
+
+            }
+
+        }
+
+        tableViewJournalLedger.setItems(list);
 
     }
+
 
 }
