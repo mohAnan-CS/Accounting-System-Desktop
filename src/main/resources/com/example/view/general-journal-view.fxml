@@ -11,22 +11,11 @@
 
 <Pane prefHeight="595.0" prefWidth="1533.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.GeneralJournalController">
    <children>
-      <Text layoutX="1029.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="General Journal Page">
-         <font>
-            <Font name="System Bold" size="40.0" />
-         </font>
-      </Text>
-      <Text layoutX="1119.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="show general journal" wrappingWidth="218.984375">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Text>
-      <ImageView fitHeight="279.0" fitWidth="337.0" layoutX="1076.0" layoutY="273.0" opacity="0.12" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="161.0" fitWidth="279.0" layoutX="1250.0" layoutY="248.0" opacity="0.12" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Images/journal.png" />
          </image>
       </ImageView>
-      <Line endX="-100.0" endY="352.5999755859375" layoutX="952.0" layoutY="198.0" startX="-100.0" startY="-135.0" strokeWidth="3.0" />
       <TableView fx:id="tableViewJournalLedger" layoutX="43.0" layoutY="74.0" prefHeight="466.0" prefWidth="755.0">
         <columns>
           <TableColumn fx:id="dateCell" prefWidth="100.80001527070999" text="Date" />
@@ -37,5 +26,11 @@
             <TableColumn fx:id="creditCell" prefWidth="124.0" text="Credit" />
         </columns>
       </TableView>
+      <Line endX="-100.0" endY="352.5999755859375" layoutX="1227.0" layoutY="212.0" startX="-100.0" startY="-135.0" strokeWidth="3.0" />
+      <Text layoutX="1172.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Setting Page" wrappingWidth="336.199951171875">
+         <font>
+            <Font name="System Bold" size="40.0" />
+         </font>
+      </Text>
    </children>
 </Pane>

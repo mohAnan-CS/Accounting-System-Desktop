@@ -13,22 +13,11 @@
 
 <AnchorPane fx:id="paneTransaction" prefHeight="595.0" prefWidth="1533.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.TransactionController">
    <children>
-      <ImageView fitHeight="279.0" fitWidth="337.0" layoutX="1066.0" layoutY="263.0" opacity="0.12" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="161.0" fitWidth="279.0" layoutX="1250.0" layoutY="248.0" opacity="0.12" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Images/transfer.png" />
          </image>
       </ImageView>
-      <Text layoutX="1057.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Transaction Page">
-         <font>
-            <Font name="System Bold" size="40.0" />
-         </font>
-      </Text>
-      <Text layoutX="1109.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adding new transaction ( debit/credit )" wrappingWidth="218.984375">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Text>
-      <Line endX="-100.0" endY="352.5999755859375" layoutX="942.0" layoutY="188.0" startX="-100.0" startY="-135.0" strokeWidth="3.0" />
       <BorderPane layoutX="56.0" layoutY="28.0" prefHeight="530.0" prefWidth="720.0">
          <top>
             <Pane prefHeight="143.0" prefWidth="720.0" BorderPane.alignment="CENTER">
@@ -54,5 +43,16 @@
             </AnchorPane>
          </bottom>
       </BorderPane>
+      <Text layoutX="1172.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Setting Page" wrappingWidth="336.199951171875">
+         <font>
+            <Font name="System Bold" size="40.0" />
+         </font>
+      </Text>
+      <Text layoutX="1251.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Editting user setting" wrappingWidth="178.984375">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Line endX="-100.0" endY="352.5999755859375" layoutX="1227.0" layoutY="212.0" startX="-100.0" startY="-135.0" strokeWidth="3.0" />
    </children>
 </AnchorPane>

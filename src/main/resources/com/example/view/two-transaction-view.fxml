@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
@@ -10,9 +11,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="322.0" prefWidth="498.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.TwoTransactionController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="409.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.TwoTransactionController">
    <children>
-      <VBox layoutX="100.0" layoutY="42.0" prefHeight="134.0" prefWidth="298.0">
+      <VBox layoutX="100.0" layoutY="42.0" prefHeight="226.0" prefWidth="563.0">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Debit">
                <VBox.margin>
@@ -26,6 +27,7 @@
                      <HBox.margin>
                         <Insets />
                      </HBox.margin></ComboBox>
+                  <TextArea fx:id="textAreaDesDebit" prefHeight="200.0" prefWidth="200.0" />
                </children>
                <VBox.margin>
                   <Insets top="5.0" />
@@ -34,7 +36,8 @@
             <HBox prefHeight="26.0" prefWidth="200.0" spacing="30.0">
                <children>
                   <TextField fx:id="textFieldRemainDebit2" prefHeight="26.0" prefWidth="176.0" promptText="Enter your debit" style="-fx-background-radius: 20px;" />
-                  <ComboBox fx:id="comboBoxRemainDebit2" prefHeight="26.0" prefWidth="96.0" />
+                  <ComboBox fx:id="comboBoxRemainDebit2" prefHeight="26.0" prefWidth="123.0" />
+                  <TextArea fx:id="textAreaDesRemainDebit" prefHeight="200.0" prefWidth="200.0" />
                </children>
                <VBox.margin>
                   <Insets top="20.0" />
@@ -53,6 +56,7 @@
                      </HBox.margin>
                   </TextField>
                   <ComboBox fx:id="comboBoxCredit2" prefHeight="26.0" prefWidth="114.0" />
+                  <TextArea fx:id="textAreaDesCredit" prefHeight="200.0" prefWidth="200.0" />
                </children>
                <VBox.margin>
                   <Insets top="5.0" />
@@ -62,6 +66,7 @@
                <children>
                   <TextField fx:id="textFieldRemainCredit2" prefHeight="26.0" prefWidth="176.0" promptText="Enter your credit" style="-fx-background-radius: 20px;" />
                   <ComboBox fx:id="comboBoxRemainCredit2" prefHeight="26.0" prefWidth="99.0" />
+                  <TextArea fx:id="textAreaDesRemainCredit" prefHeight="39.0" prefWidth="227.0" />
                </children>
                <VBox.margin>
                   <Insets top="20.0" />
@@ -69,7 +74,7 @@
             </HBox>
          </children>
       </VBox>
-      <Button layoutX="192.0" layoutY="272.0" mnemonicParsing="false" onAction="#btnSubmitOnAction" prefHeight="36.0" prefWidth="114.0" style="-fx-background-radius: 20px;" text="Submit" />
+      <Button layoutX="283.0" layoutY="340.0" mnemonicParsing="false" onAction="#btnSubmitOnAction" prefHeight="36.0" prefWidth="114.0" style="-fx-background-radius: 20px;" text="Submit" />
       <Text layoutX="335.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Today date : 2/2/2022">
          <font>
             <Font name="System Bold" size="12.0" />

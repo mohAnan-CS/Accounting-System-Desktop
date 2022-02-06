@@ -14,23 +14,23 @@
 
 <Pane prefHeight="595.0" prefWidth="1533.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.UserSettingController">
    <children>
-      <Text layoutX="1067.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Setting Page">
+      <Text layoutX="1162.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Setting Page" wrappingWidth="336.199951171875">
          <font>
             <Font name="System Bold" size="40.0" />
          </font>
       </Text>
-      <Text layoutX="1119.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Editting user setting" wrappingWidth="218.984375">
+      <Text layoutX="1241.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Editting user setting" wrappingWidth="178.984375">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
-      <ImageView fitHeight="279.0" fitWidth="337.0" layoutX="1075.0" layoutY="243.0" opacity="0.12" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="161.0" fitWidth="279.0" layoutX="1250.0" layoutY="248.0" opacity="0.12" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Images/user (1).png" />
          </image>
       </ImageView>
-      <Line endX="-100.0" endY="352.5999755859375" layoutX="952.0" layoutY="198.0" startX="-100.0" startY="-135.0" strokeWidth="3.0" />
-      <HBox layoutX="157.0" layoutY="65.0" prefHeight="39.0" prefWidth="545.0" spacing="80.0">
+      <Line endX="-100.0" endY="352.5999755859375" layoutX="1217.0" layoutY="202.0" startX="-100.0" startY="-135.0" strokeWidth="3.0" />
+      <HBox layoutX="323.0" layoutY="40.0" prefHeight="39.0" prefWidth="545.0" spacing="80.0">
          <children>
             <Button mnemonicParsing="false" onAction="#btnAddNewUserOnAction" style="-fx-background-radius: 20px;" text="Add new user">
                <font>
@@ -49,13 +49,13 @@
             </Button>
          </children>
       </HBox>
-      <TextField fx:id="textFieldSearch" layoutX="285.0" layoutY="173.0" prefHeight="25.0" prefWidth="349.0" style="-fx-background-radius: 15px;" />
-      <Text layoutX="217.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search">
+      <TextField fx:id="textFieldSearch" layoutX="438.0" layoutY="121.0" prefHeight="25.0" prefWidth="416.0" style="-fx-background-radius: 15px;" />
+      <Text layoutX="367.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <TableView fx:id="tableViewUser" layoutX="65.0" layoutY="229.0" prefHeight="323.0" prefWidth="729.0">
+      <TableView fx:id="tableViewUser" layoutX="88.0" layoutY="175.0" prefHeight="381.0" prefWidth="926.0">
         <columns>
           <TableColumn fx:id="id" prefWidth="67.19997787475586" text="id" />
           <TableColumn fx:id="name" prefWidth="115.20001220703125" text="name" />
