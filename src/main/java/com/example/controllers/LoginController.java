@@ -31,7 +31,7 @@ public class LoginController implements Initializable {
     }
 
     @FXML
-    void btnLoginOnAction() throws IOException{
+    void btnLoginOnAction() {
 
         try {
 
@@ -51,12 +51,16 @@ public class LoginController implements Initializable {
 
 
         }catch (SQLException | IOException e) {
-            showAlert("Error", "ERROR", e.getMessage());
+            //showAlert("Error", "ERROR", e.getMessage());
+            e.printStackTrace();
         } catch (IllegalArgumentException illegalArgumentException){
-            showAlert("Warning" , "WARNING" , illegalArgumentException.getMessage());
+            //showAlert("Warning" , "WARNING" , illegalArgumentException.getMessage());
+            illegalArgumentException.printStackTrace();
         } catch (Exception exception){
-            showAlert("Error", "ERROR", exception.getMessage());
+            //showAlert("Error", "ERROR", exception.getMessage());
+            exception.printStackTrace();
         }
+
 
     }
 

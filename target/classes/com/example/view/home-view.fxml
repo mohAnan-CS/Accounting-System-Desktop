@@ -96,7 +96,7 @@
    <top>
       <AnchorPane prefHeight="75.0" prefWidth="1534.0" style="-fx-background-color: #DFDFDF;" BorderPane.alignment="CENTER">
          <children>
-            <Text layoutX="701.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="02:30 pm" wrappingWidth="130.40478515625">
+            <Text fx:id="textTime" layoutX="701.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="130.40478515625">
                <font>
                   <Font size="29.0" />
                </font>

@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import model.GeneralJournalModel;
 import model.GeneralLedgerModel;
 
 import java.io.IOException;
@@ -13,8 +14,6 @@ import java.sql.SQLException;
 
 
 public class Main extends Application {
-
-    //Hello
 
     public static Stage STAGE ;
 
@@ -33,10 +32,11 @@ public class Main extends Application {
 
     public static void main(String[] args) throws SQLException {
 
-
-
         launch();
-        
+//        GeneralJournalModel g = new GeneralJournalModel();
+//        g.getGeneralJournalInformation();
+//        GeneralLedgerModel g = new GeneralLedgerModel();
+//        g.Search("cash");
 
     }
 

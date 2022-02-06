@@ -12,7 +12,7 @@ public class LoginModel {
     public static String permission;
     public static String id;
 
-    public static boolean checkLogin(int ID,String Password) throws SQLException {
+    public boolean checkLogin(int ID,String Password) throws SQLException {
 
         DataBaseConnection db = new DataBaseConnection();
         Statement stmt = db.getConn().createStatement();
@@ -24,15 +24,19 @@ public class LoginModel {
             FName = rs.getString("user_first_name");
             LName  = rs.getString("user_last_name");
             permission = rs.getString("user_permission");
+
            c++;
         }
+        System.out.println("c = " + c);
         if (c == 0){
+            System.out.println("if statement");
             FName = null;
             LName = null;
             permission = null;
             return false;
         }
         else {
+            System.out.println("else statement");
            return true;
         }
     }

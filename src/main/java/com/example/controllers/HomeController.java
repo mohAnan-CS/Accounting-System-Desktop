@@ -1,5 +1,6 @@
 package com.example.controllers;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,10 +10,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
-
+import model.LoginModel;
 import java.io.IOException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.ResourceBundle;
+
 
 public class HomeController implements Initializable {
 
@@ -28,10 +32,62 @@ public class HomeController implements Initializable {
     @FXML
     private Text textUserName;
 
+    @FXML
+    private Text textTime;
+
+    private volatile boolean stop ;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        setTimeNow();
+        setTextUserName();
+
     }
+
+    private void setTextUserName(){
+
+        String userFirstName = LoginModel.FName ;
+        String userLastName = LoginModel.LName ;
+        String userPermission = LoginModel.permission ;
+
+        if (userPermission.equalsIgnoreCase("manager")){
+            textUserName.setText(userFirstName + " " + userLastName + " ( Manager )");
+            btnTransaction.setDisable(true);
+        }
+        else if (userPermission.equalsIgnoreCase("chiveaccount")){
+            textUserName.setText(userFirstName + " " + userLastName + " ( Chive Account )");
+            btnUserSetting.setDisable(true);
+        }
+        else if (userPermission.equalsIgnoreCase("account")){
+            textUserName.setText(userFirstName + " " + userLastName + " ( Account )");
+            btnUserSetting.setDisable(true);
+        }
+
+    }
+
+    private void setTimeNow(){
+
+        Thread thread = new Thread(() ->{
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("hh:mm:ss");
+            while (!stop){
+                try {
+
+                    Thread.sleep(1000);
+
+                }catch (Exception e){
+                    System.out.println(e);
+                }
+                final String timeNow = simpleDateFormat.format(new Date());
+                Platform.runLater(() ->{
+                    textTime.setText(timeNow);
+                });
+            }
+        });
+        thread.start();
+
+    }
+
 
     @FXML
     void btnFinancialOnAction(ActionEvent event) throws IOException{

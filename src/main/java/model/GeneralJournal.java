@@ -1,15 +1,19 @@
 package model;
 
-import sql.DataBaseConnection;
-
-import java.sql.ResultSet;
-import java.sql.Statement;
 
 public class GeneralJournal {
 
-    String AccountName,date,name,type;
+    String AccountName,date,name,type,explanation;
     double value;
     int id,relation;
+
+    public String getExplanation() {
+        return explanation;
+    }
+
+    public void setExplanation(String explanation) {
+        this.explanation = explanation;
+    }
 
     public int getRelation() {
         return relation;
@@ -29,10 +33,11 @@ public class GeneralJournal {
                 ", value=" + value +
                 ", id=" + id +
                 ", relation=" + relation +
+                ", explanation=" + explanation +
                 '}';
     }
 
-    public GeneralJournal(String AccountName, String date, String name, String type, double value, int id,int relation) {
+    public GeneralJournal(String AccountName, String date, String name, String type, double value, int id,int relation,String explanation) {
 
         this.AccountName = AccountName;
         this.date = date;
@@ -41,6 +46,7 @@ public class GeneralJournal {
         this.value = value;
         this.id = id;
         this.relation = relation;
+        this.explanation = explanation;
     }
 
     public String getAccountName() {

@@ -8,8 +8,10 @@ public class GeneralLedger {
     String accountName;
     double amount;
     String typ;
+    double balance;
+    String explanation;
 
-    public GeneralLedger(int userId, int relation, String userName, String date, String accountName, double amount, String typ) {
+    public GeneralLedger(int userId, int relation, String userName, String date, String accountName, double amount, String typ,double balance,String explanation) {
         UserId = userId;
         this.relation = relation;
         UserName = userName;
@@ -17,6 +19,8 @@ public class GeneralLedger {
         this.accountName = accountName;
         this.amount = amount;
         this.typ = typ;
+        this.balance = balance;
+        this.explanation =explanation;
     }
 
     @Override
@@ -29,7 +33,25 @@ public class GeneralLedger {
                 ", accountName='" + accountName + '\'' +
                 ", amount=" + amount +
                 ", typ='" + typ + '\'' +
+                ", balance=" + balance +
+                ", explanation=" + explanation +
                 '}';
+    }
+
+    public String getExplanation() {
+        return explanation;
+    }
+
+    public void setExplanation(String explanation) {
+        this.explanation = explanation;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
 
     public int getUserId() {

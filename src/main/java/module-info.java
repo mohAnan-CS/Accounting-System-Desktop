@@ -9,6 +9,7 @@ module AccountingProgram {
     opens sql;
     opens com.example.controllers ;
     opens model;
+    opens com.example.controllers.TableViewClass;
 
 
 }

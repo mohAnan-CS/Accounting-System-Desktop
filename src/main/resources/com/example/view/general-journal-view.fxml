@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
@@ -29,22 +27,15 @@
          </image>
       </ImageView>
       <Line endX="-100.0" endY="352.5999755859375" layoutX="952.0" layoutY="198.0" startX="-100.0" startY="-135.0" strokeWidth="3.0" />
-      <ScrollPane layoutX="115.0" layoutY="65.0" prefHeight="466.0" prefWidth="605.0">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="470.0" prefWidth="585.0">
-               <children>
-                  <TableView fx:id="tableViewJournalLedger" prefHeight="466.0" prefWidth="587.0">
-                    <columns>
-                      <TableColumn fx:id="dateCell" prefWidth="100.80001527070999" text="Date" />
-                      <TableColumn fx:id="accountTypeCell" prefWidth="176.00003051757812" text="Account Type" />
-                        <TableColumn fx:id="refCell" prefWidth="68.79998779296875" text="Ref" />
-                        <TableColumn fx:id="debitCell" prefWidth="109.5999755859375" text="Debit" />
-                        <TableColumn fx:id="creditCell" prefWidth="131.2000732421875" text="Credit" />
-                    </columns>
-                  </TableView>
-               </children>
-            </AnchorPane>
-        </content>
-      </ScrollPane>
+      <TableView fx:id="tableViewJournalLedger" layoutX="43.0" layoutY="74.0" prefHeight="466.0" prefWidth="755.0">
+        <columns>
+          <TableColumn fx:id="dateCell" prefWidth="100.80001527070999" text="Date" />
+          <TableColumn fx:id="accountTypeCell" prefWidth="161.60000610351562" text="Account Type" />
+            <TableColumn fx:id="userIdCell" prefWidth="72.7999267578125" text="User Id" />
+            <TableColumn fx:id="userNameCell" prefWidth="175.199951171875" text="User Name" />
+            <TableColumn fx:id="debitCell" prefWidth="124.0" text="Debit" />
+            <TableColumn fx:id="creditCell" prefWidth="124.0" text="Credit" />
+        </columns>
+      </TableView>
    </children>
 </Pane>
