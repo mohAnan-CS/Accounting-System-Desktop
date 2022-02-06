@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
@@ -10,46 +11,67 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="322.0" prefWidth="498.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.OneTransactionController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="409.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.OneTransactionController">
    <children>
-      <VBox layoutX="100.0" layoutY="79.0" prefHeight="134.0" prefWidth="298.0">
+      <VBox layoutX="63.0" layoutY="102.0" prefHeight="188.0" prefWidth="622.0">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Debit">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-            </Text>
-            <HBox prefHeight="26.0" prefWidth="200.0" spacing="30.0">
+            <HBox prefHeight="17.0" prefWidth="200.0" spacing="60.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Debit" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Account Type">
+                     <HBox.margin>
+                        <Insets left="120.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Description">
+                     <HBox.margin>
+                        <Insets left="40.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox prefHeight="47.0" prefWidth="622.0" spacing="30.0">
                <children>
                   <TextField fx:id="textFieldDebit" prefHeight="26.0" prefWidth="176.0" style="-fx-background-radius: 20px;" />
-                  <ComboBox fx:id="comboBoxDebit" prefHeight="26.0" prefWidth="114.0" />
+                  <ComboBox fx:id="comboBoxDebit" prefHeight="26.0" prefWidth="140.0" style="-fx-background-radius: 20px;" />
+                  <TextArea fx:id="textAreaDescriptionDebit" prefHeight="43.0" prefWidth="242.0" />
                </children>
                <VBox.margin>
                   <Insets top="5.0" />
                </VBox.margin>
             </HBox>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Credit">
-               <VBox.margin>
-                  <Insets top="28.0" />
-               </VBox.margin>
-            </Text>
-            <HBox prefHeight="26.0" prefWidth="200.0" spacing="30.0">
+            <HBox prefHeight="17.0" prefWidth="200.0" spacing="60.0">
                <children>
-                  <TextField fx:id="textFieldCredit" prefHeight="26.0" prefWidth="176.0" style="-fx-background-radius: 20px;">
+                  <Text fx:id="Credit" strokeType="OUTSIDE" strokeWidth="0.0" text="Debit" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Account Type">
                      <HBox.margin>
-                        <Insets />
+                        <Insets left="120.0" />
                      </HBox.margin>
-                  </TextField>
-                  <ComboBox fx:id="comboBoxCredit" prefHeight="26.0" prefWidth="114.0" />
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Description">
+                     <HBox.margin>
+                        <Insets left="40.0" />
+                     </HBox.margin>
+                  </Text>
                </children>
                <VBox.margin>
-                  <Insets top="5.0" />
+                  <Insets top="40.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="49.0" prefWidth="622.0" spacing="30.0">
+               <children>
+                  <TextField fx:id="textFieldCredit" prefHeight="26.0" prefWidth="176.0" style="-fx-background-radius: 20px;" />
+                  <ComboBox fx:id="comboBoxCredit" prefHeight="26.0" prefWidth="140.0" style="-fx-background-radius: 20px;" />
+                  <TextArea fx:id="textAreaDescriptionCredit" prefHeight="93.0" prefWidth="242.0" />
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
                </VBox.margin>
             </HBox>
          </children>
       </VBox>
-      <Button layoutX="192.0" layoutY="243.0" mnemonicParsing="false" onAction="#btnSubmitOneTransactionOnAction" prefHeight="36.0" prefWidth="114.0" style="-fx-background-radius: 20px;" text="Submit" />
-      <Text layoutX="340.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Today date : 2/2/2022">
+      <Button layoutX="256.0" layoutY="332.0" mnemonicParsing="false" onAction="#btnSubmitOneTransactionOnAction" prefHeight="36.0" prefWidth="209.0" style="-fx-background-radius: 20px;" text="Submit" />
+      <Text layoutX="560.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Today date : 2/2/2022">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

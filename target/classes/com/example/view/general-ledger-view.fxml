@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
@@ -27,10 +29,25 @@
          </image>
       </ImageView>
       <Line endX="-100.0" endY="352.5999755859375" layoutX="952.0" layoutY="198.0" startX="-100.0" startY="-135.0" strokeWidth="3.0" />
-      <ScrollPane fx:id="scrollPaneButton" layoutX="43.0" layoutY="59.0" prefHeight="491.0" prefWidth="88.0">
+      <ScrollPane fx:id="scrollPaneButton" layoutX="24.0" layoutY="61.0" prefHeight="491.0" prefWidth="145.0" style="-fx-background-color: #DFDFDF;">
          <content>
-            <VBox fx:id="vboxButton" prefHeight="486.0" prefWidth="86.0" />
+            <VBox fx:id="vboxButton" alignment="TOP_CENTER" prefHeight="488.0" prefWidth="142.0" spacing="35.0" style="-fx-background-color: #DFDFDF;" />
          </content>
       </ScrollPane>
+      <Text fx:id="textTypeAccount" layoutX="355.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Debreassion expness" wrappingWidth="299.2000732421875">
+         <font>
+            <Font name="System Bold Italic" size="30.0" />
+         </font>
+      </Text>
+      <TableView layoutX="194.0" layoutY="106.0" prefHeight="438.0" prefWidth="628.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="Date" />
+          <TableColumn prefWidth="216.800048828125" text="Explanetion" />
+            <TableColumn prefWidth="163.199951171875" text="Debit" />
+            <TableColumn prefWidth="81.60003662109375" text="Credit" />
+            <TableColumn prefWidth="91.99993896484375" text="Balance" />
+            <TableColumn prefWidth="75.0" text="Column X" />
+        </columns>
+      </TableView>
    </children>
 </Pane>

@@ -8,6 +8,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -26,22 +27,36 @@ public class GeneralLedgerController implements Initializable {
     @FXML
     private VBox vboxButton;
 
+    @FXML
+    private Text textTypeAccount;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        createButtonsAccountType();
 
 
         //pane.getChildren().add(scrollPane);
         //scrollPaneButton.setContent(anchorPaneButton);
         //anchorPaneButton.getChildren().add(vboxButton);
 
-        vboxButton.setSpacing(30);
-        for (int i = 0  ; i < 12 ; i++){
+        //vboxButton.setSpacing(30);
+
+
+    }
+
+    private void createButtonsAccountType(){
+
+        String[] strings = new String[]{"Cash" , "Money" , "Owner" , "Supplies"};
+
+        for (int i = 0  ; i < strings.length ; i++){
+
             Button button = new Button();
-            button.setText(String.valueOf(i));
+            button.setText(strings[i]);
             button.setPadding(new Insets(12));
             button.setOnAction(actionEvent -> {
 
-                System.out.println(button.getText().toString());
+                textTypeAccount.setText(button.getText());
 
             });
             vboxButton.getChildren().add(button);
