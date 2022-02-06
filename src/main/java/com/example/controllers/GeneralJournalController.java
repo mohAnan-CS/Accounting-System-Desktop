@@ -93,6 +93,7 @@ public class GeneralJournalController implements Initializable {
             }
 
             //System.out.println(lisGeneralJournal.get(i).toString());
+            System.out.println(lisGeneralJournal.get(i).getType()+"            hkgj");
             if (lisGeneralJournal.get(i).getType().equalsIgnoreCase("debit")){
                 System.out.println("date = "+lisGeneralJournal.get(i).getDate());
                 System.out.println("account type " + lisGeneralJournal.get(i).getAccountName());

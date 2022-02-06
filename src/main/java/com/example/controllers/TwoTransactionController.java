@@ -91,10 +91,13 @@ public class TwoTransactionController implements Initializable {
                     creditRemainType = (String) comboBoxRemainCredit2.getSelectionModel().getSelectedItem(),
                     debitType = (String) comboBoxDebit2.getSelectionModel().getSelectedItem(),
                     debitRemainType = (String) comboBoxRemainDebit2.getSelectionModel().getSelectedItem();
-
+            String ex = textAreaDesDebit.getText();
+            String exr = textAreaDesRemainDebit.getText();
+            String ex1 = textAreaDesCredit.getText();
+            String exr1 = textAreaDesRemainCredit.getText();
 
             transactionModel.storeDebitCredit2(debitValue, creditValue, debitRemainValue, creditRemainValue,
-                    creditRemainType, debitRemainType, debitType, creditType);
+                    creditRemainType, debitRemainType, debitType, creditType,ex,exr,ex1,exr1);
 
         }catch (SQLException sqlException){
             showAlert("Error" , "ERROR" , sqlException.getMessage());
