@@ -13,22 +13,11 @@
 
 <Pane fx:id="pane" prefHeight="595.0" prefWidth="1533.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.GeneralLedgerController">
    <children>
-      <Text layoutX="1034.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="General Ledger Page">
-         <font>
-            <Font name="System Bold" size="40.0" />
-         </font>
-      </Text>
-      <Text layoutX="1119.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="show general ledger " wrappingWidth="218.984375">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Text>
-      <ImageView fitHeight="279.0" fitWidth="337.0" layoutX="1076.0" layoutY="273.0" opacity="0.12" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="161.0" fitWidth="279.0" layoutX="1250.0" layoutY="248.0" opacity="0.12" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Images/ledger.png" />
          </image>
       </ImageView>
-      <Line endX="-100.0" endY="352.5999755859375" layoutX="952.0" layoutY="198.0" startX="-100.0" startY="-135.0" strokeWidth="3.0" />
       <ScrollPane fx:id="scrollPaneButton" layoutX="24.0" layoutY="61.0" prefHeight="491.0" prefWidth="145.0" style="-fx-background-color: #DFDFDF;">
          <content>
             <VBox fx:id="vboxButton" alignment="TOP_CENTER" prefHeight="488.0" prefWidth="142.0" spacing="35.0" style="-fx-background-color: #DFDFDF;" />
@@ -49,5 +38,16 @@
             <TableColumn prefWidth="75.0" text="Column X" />
         </columns>
       </TableView>
+      <Text layoutX="1172.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Setting Page" wrappingWidth="336.199951171875">
+         <font>
+            <Font name="System Bold" size="40.0" />
+         </font>
+      </Text>
+      <Text layoutX="1251.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Editting user setting" wrappingWidth="178.984375">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Line endX="-100.0" endY="352.5999755859375" layoutX="1227.0" layoutY="212.0" startX="-100.0" startY="-135.0" strokeWidth="3.0" />
    </children>
 </Pane>

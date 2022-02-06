@@ -34,7 +34,7 @@
                <children>
                   <TextField fx:id="textFieldDebit" prefHeight="26.0" prefWidth="176.0" style="-fx-background-radius: 20px;" />
                   <ComboBox fx:id="comboBoxDebit" prefHeight="26.0" prefWidth="140.0" style="-fx-background-radius: 20px;" />
-                  <TextArea prefHeight="43.0" prefWidth="242.0" />
+                  <TextArea fx:id="textAreaDescriptionDebit" prefHeight="43.0" prefWidth="242.0" />
                </children>
                <VBox.margin>
                   <Insets top="5.0" />
@@ -42,7 +42,7 @@
             </HBox>
             <HBox prefHeight="17.0" prefWidth="200.0" spacing="60.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Debit" />
+                  <Text fx:id="Credit" strokeType="OUTSIDE" strokeWidth="0.0" text="Debit" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Account Type">
                      <HBox.margin>
                         <Insets left="120.0" />
@@ -61,8 +61,8 @@
             <HBox prefHeight="49.0" prefWidth="622.0" spacing="30.0">
                <children>
                   <TextField fx:id="textFieldCredit" prefHeight="26.0" prefWidth="176.0" style="-fx-background-radius: 20px;" />
-                  <ComboBox fx:id="comboBoxCredit" prefHeight="26.0" prefWidth="140.0" />
-                  <TextArea prefHeight="93.0" prefWidth="242.0" />
+                  <ComboBox fx:id="comboBoxCredit" prefHeight="26.0" prefWidth="140.0" style="-fx-background-radius: 20px;" />
+                  <TextArea fx:id="textAreaDescriptionCredit" prefHeight="93.0" prefWidth="242.0" />
                </children>
                <VBox.margin>
                   <Insets top="10.0" />

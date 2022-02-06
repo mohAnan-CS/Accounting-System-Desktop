@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import model.TransactionModel;
 import java.net.URL;
@@ -12,11 +13,15 @@ import java.util.ResourceBundle;
 
 public class TwoTransactionController implements Initializable {
 
+
     @FXML
     private TextField textFieldDebit2;
 
     @FXML
-    private ComboBox comboBoxDebit2;
+    private ComboBox<?> comboBoxDebit2;
+
+    @FXML
+    private TextArea textAreaDesDebit;
 
     @FXML
     private TextField textFieldRemainDebit2;
@@ -25,16 +30,25 @@ public class TwoTransactionController implements Initializable {
     private ComboBox comboBoxRemainDebit2;
 
     @FXML
+    private TextArea textAreaDesRemainDebit;
+
+    @FXML
     private TextField textFieldCredit2;
 
     @FXML
     private ComboBox comboBoxCredit2;
 
     @FXML
+    private TextArea textAreaDesCredit;
+
+    @FXML
     private TextField textFieldRemainCredit2;
 
     @FXML
     private ComboBox comboBoxRemainCredit2;
+
+    @FXML
+    private TextArea textAreaDesRemainCredit;
 
     private Boolean checkTextEmpty = false, checkComboBoxEmpty = false, checkDebitCreditValid =false, checkComboBoxValid = false;
 

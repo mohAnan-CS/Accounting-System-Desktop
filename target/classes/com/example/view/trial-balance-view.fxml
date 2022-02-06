@@ -11,22 +11,11 @@
 
 <Pane prefHeight="595.0" prefWidth="1533.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.TrialBalanceController">
    <children>
-      <ImageView fitHeight="279.0" fitWidth="337.0" layoutX="1076.0" layoutY="273.0" opacity="0.12" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="161.0" fitWidth="279.0" layoutX="1250.0" layoutY="248.0" opacity="0.12" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Images/investments-balance.png" />
          </image>
       </ImageView>
-      <Text layoutX="1067.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trial Balance Page">
-         <font>
-            <Font name="System Bold" size="40.0" />
-         </font>
-      </Text>
-      <Text layoutX="1119.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Show trial balance" wrappingWidth="218.984375">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Text>
-      <Line endX="-100.0" endY="352.5999755859375" layoutX="952.0" layoutY="198.0" startX="-100.0" startY="-135.0" strokeWidth="3.0" />
       <TableView layoutX="110.0" layoutY="127.0" prefHeight="359.0" prefWidth="625.0">
         <columns>
           <TableColumn prefWidth="324.0000457763672" text="ACCOUNT" />
@@ -35,5 +24,16 @@
         </columns>
       </TableView>
       <Text layoutX="391.0" layoutY="512.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total                     2300                                    2000" wrappingWidth="296.0628662109375" />
+      <Text layoutX="1208.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trial Balance" wrappingWidth="285.7999267578125">
+         <font>
+            <Font name="System Bold" size="40.0" />
+         </font>
+      </Text>
+      <Text layoutX="1251.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Editting user setting" wrappingWidth="178.984375">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Line endX="-100.0" endY="352.5999755859375" layoutX="1227.0" layoutY="212.0" startX="-100.0" startY="-135.0" strokeWidth="3.0" />
    </children>
 </Pane>
