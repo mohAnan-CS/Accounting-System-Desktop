@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import model.TransactionModel;
 
@@ -25,37 +26,11 @@ public class OneTransactionController implements Initializable {
     @FXML
     private ComboBox comboBoxCredit;
 
+    @FXML
+    private TextArea textAreaDescriptionCredit;
 
-
-
-
-//    public void checkTextEmpty(){
-//
-//        if (textFieldDebit.getText().trim().isEmpty() && textFieldCredit.getText().isEmpty()){
-//            showAlertError("debit and credit empty");
-//        }
-//        else if (textFieldDebit.getText().trim().isEmpty()){
-//            showAlertError("debit is empty");
-//        }
-//        else if (textFieldCredit.getText().trim().isEmpty()){
-//            showAlertError("credit is empty");
-//        }
-//
-//    }
-//
-//    public void checkComboBoxEmpty(){
-//
-//        if (comboBoxCredit.getValue().equals(null) && comboBoxDebit.getValue().equals(null)){
-//            showAlertError("combo box debit and credit empty");
-//        }
-//        else if (comboBoxDebit.getValue().equals(null)){
-//            showAlertError("combo box debit is empty");
-//        }
-//        else if (comboBoxCredit.getValue().equals(null)){
-//            showAlertError("combo box credit is empty");
-//        }
-//
-//    }
+    @FXML
+    private TextArea textAreaDescriptionDebit;
 
 
     public void showAlertError(String errorMessage){
@@ -68,7 +43,10 @@ public class OneTransactionController implements Initializable {
 
     }
 
-    private Boolean checkTextEmpty = false, checkComboBoxEmpty = false, checkDebitCreditValid =false, checkComboBoxValid = false;
+    private Boolean checkTextEmpty = false,
+            checkComboBoxEmpty = false,
+            checkDebitCreditValid =false,
+            checkComboBoxValid = false;
 
 
     @Override
@@ -100,8 +78,9 @@ public class OneTransactionController implements Initializable {
                     creditValue = Double.parseDouble(textFieldCredit.getText().trim());
             String debitType = (String) comboBoxDebit.getSelectionModel().getSelectedItem(),
                     creditType = (String) comboBoxCredit.getSelectionModel().getSelectedItem();
-
-            transactionModel.storeDebitCredit1(debitValue, creditValue, debitType, creditType);
+            String ex = textAreaDescriptionDebit.getText();
+            String ex1 = textAreaDescriptionCredit.getText();
+            transactionModel.storeDebitCredit1(debitValue, creditValue, debitType, creditType,ex,ex1);
 
         }catch (SQLException sqlException){
             showAlert("Error" , "ERROR" , sqlException.getMessage());
@@ -232,6 +211,6 @@ public class OneTransactionController implements Initializable {
     }
 
 
-//
+
 
 }

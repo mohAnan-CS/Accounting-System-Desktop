@@ -47,7 +47,7 @@ public class TransactionModel {
         comboBoxRemainCredit.setItems(list);
     }
 
-    public void storeDebitCredit1(double debitValue,double creditValue,String debitType,String creditType) throws SQLException {
+    public void storeDebitCredit1(double debitValue,double creditValue,String debitType,String creditType,String ex,String ex1) throws SQLException {
 
         DataBaseConnection db = new DataBaseConnection();
         Statement stmt = db.getConn().createStatement();
@@ -69,8 +69,8 @@ public class TransactionModel {
         LocalDateTime now = LocalDateTime.now();
         String date = dtf.format(now);
 
-        stmt.executeUpdate("insert INTO DebitCreditInfo (userid, dates, relation, amount, accountName,typ) values("+login.id+",'"+date+"',"+max+","+debitValue+",'"+debitType+ "','debit');");
-        stmt.executeUpdate("insert INTO DebitCreditInfo (userid, dates, relation, amount, accountName,typ) values("+login.id+",'"+date+"',"+max+","+creditValue+",'"+creditType+ "','credit');");
+        stmt.executeUpdate("insert INTO DebitCreditInfo (userid, dates, relation, amount, accountName,typ,explanation) values("+login.id+",'"+date+"',"+max+","+debitValue+",'"+debitType+ "','debit','"+ex+"');");
+        stmt.executeUpdate("insert INTO DebitCreditInfo (userid, dates, relation, amount, accountName,typ,explanation) values("+login.id+",'"+date+"',"+max+","+creditValue+",'"+creditType+ "','debit','"+ex1+"');");
 
     }
     public void storeDebitCredit2(double debitValue,double creditValue,double RemainDebit,double RemainCredit,
