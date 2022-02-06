@@ -2,17 +2,27 @@ package com.example.controllers.TableViewClass;
 
 public class GeneralJournalTableView {
 
-    private String date , type , name , debit , credit  , id;
+    private String date , type , name , debit , credit  , id , description;
     //private int id ;
 //    private double debit  , credit;
 
-    public GeneralJournalTableView(String date, String type, String name, String id, String debit, String credit) {
+    public GeneralJournalTableView(String date, String type, String name,
+                                   String id, String debit, String credit , String description) {
         this.date = date;
         this.type = type;
         this.name = name;
         this.id = id;
         this.debit = debit;
         this.credit = credit;
+        this.description = description;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getDate() {

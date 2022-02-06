@@ -33,10 +33,7 @@ public class Main extends Application {
     public static void main(String[] args) throws SQLException {
 
         launch();
-//        GeneralJournalModel g = new GeneralJournalModel();
-//        g.getGeneralJournalInformation();
-//        GeneralLedgerModel g = new GeneralLedgerModel();
-//        g.Search("cash");
+
 
     }
 

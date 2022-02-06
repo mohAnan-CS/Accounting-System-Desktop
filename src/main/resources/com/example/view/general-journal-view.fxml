@@ -16,14 +16,15 @@
             <Image url="@../../../Images/journal.png" />
          </image>
       </ImageView>
-      <TableView fx:id="tableViewJournalLedger" layoutX="43.0" layoutY="74.0" prefHeight="466.0" prefWidth="755.0">
+      <TableView fx:id="tableViewJournalLedger" layoutX="69.0" layoutY="76.0" prefHeight="466.0" prefWidth="968.0">
         <columns>
           <TableColumn fx:id="dateCell" prefWidth="100.80001527070999" text="Date" />
-          <TableColumn fx:id="accountTypeCell" prefWidth="161.60000610351562" text="Account Type" />
-            <TableColumn fx:id="userIdCell" prefWidth="72.7999267578125" text="User Id" />
-            <TableColumn fx:id="userNameCell" prefWidth="175.199951171875" text="User Name" />
-            <TableColumn fx:id="debitCell" prefWidth="124.0" text="Debit" />
-            <TableColumn fx:id="creditCell" prefWidth="124.0" text="Credit" />
+          <TableColumn fx:id="accountTypeCell" prefWidth="127.19996643066406" text="Account Type" />
+            <TableColumn fx:id="descriptionCell" prefWidth="303.2000427246094" text="Description" />
+            <TableColumn fx:id="userIdCell" prefWidth="65.5999755859375" text="User Id" />
+            <TableColumn fx:id="userNameCell" prefWidth="141.60003662109375" text="User Name" />
+            <TableColumn fx:id="debitCell" prefWidth="116.0" text="Debit" />
+            <TableColumn fx:id="creditCell" prefWidth="118.39984130859375" text="Credit" />
         </columns>
       </TableView>
       <Line endX="-100.0" endY="352.5999755859375" layoutX="1227.0" layoutY="212.0" startX="-100.0" startY="-135.0" strokeWidth="3.0" />

@@ -38,6 +38,9 @@ public class GeneralJournalController implements Initializable {
     @FXML
     private TableColumn<GeneralJournalTableView, String> creditCell;
 
+    @FXML
+    private TableColumn<GeneralJournalTableView, String> descriptionCell;
+
     ObservableList<GeneralJournal> lisGeneralJournal = FXCollections.observableArrayList();
     ObservableList<GeneralJournalTableView> list = FXCollections.observableArrayList();
 
@@ -64,6 +67,7 @@ public class GeneralJournalController implements Initializable {
         this.debitCell.setCellValueFactory(new PropertyValueFactory<>("debit"));
         this.creditCell.setCellValueFactory(new PropertyValueFactory<>("credit"));
         this.userNameCell.setCellValueFactory(new PropertyValueFactory<>("name"));
+        this.descriptionCell.setCellValueFactory(new PropertyValueFactory<>("description"));
 
 
     }
@@ -85,7 +89,7 @@ public class GeneralJournalController implements Initializable {
             if (lisGeneralJournal.get(i).getRelation() != relation){
 
                 GeneralJournalTableView generalJournalTableView =
-                        new GeneralJournalTableView("" ,"" , "" , "" , "" , "");
+                        new GeneralJournalTableView("" ,"" , "" , "" , "" , "" , "");
                 list.add(generalJournalTableView);
                 relation = relation + 1 ;
                 System.out.println("-------------------------");
@@ -107,7 +111,8 @@ public class GeneralJournalController implements Initializable {
                                 lisGeneralJournal.get(i).getName() ,
                                 String.valueOf(lisGeneralJournal.get(i).getId()),
                                 String.valueOf(lisGeneralJournal.get(i).getValue()) ,
-                                "");
+                                "" ,
+                                lisGeneralJournal.get(i).getExplanation());
                 list.add(generalJournalTableView);
 
 
@@ -125,7 +130,8 @@ public class GeneralJournalController implements Initializable {
                                 lisGeneralJournal.get(i).getName() ,
                                 String.valueOf(lisGeneralJournal.get(i).getId()),
                                 "" ,
-                                String.valueOf(lisGeneralJournal.get(i).getValue()));
+                                String.valueOf(lisGeneralJournal.get(i).getValue()) ,
+                                lisGeneralJournal.get(i).getExplanation());
 
                 list.add(generalJournalTableView);
 

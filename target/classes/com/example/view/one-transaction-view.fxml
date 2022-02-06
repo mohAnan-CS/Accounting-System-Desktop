@@ -42,7 +42,7 @@
             </HBox>
             <HBox prefHeight="17.0" prefWidth="200.0" spacing="60.0">
                <children>
-                  <Text fx:id="Credit" strokeType="OUTSIDE" strokeWidth="0.0" text="Debit" />
+                  <Text fx:id="Credit" strokeType="OUTSIDE" strokeWidth="0.0" text="Credit" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Account Type">
                      <HBox.margin>
                         <Insets left="120.0" />
