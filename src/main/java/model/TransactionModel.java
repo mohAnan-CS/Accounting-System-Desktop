@@ -70,7 +70,7 @@ public class TransactionModel {
         String date = dtf.format(now);
 
         stmt.executeUpdate("insert INTO DebitCreditInfo (userid, dates, relation, amount, accountName,typ,explanation) values("+login.id+",'"+date+"',"+max+","+debitValue+",'"+debitType+ "','debit','"+ex+"');");
-        stmt.executeUpdate("insert INTO DebitCreditInfo (userid, dates, relation, amount, accountName,typ,explanation) values("+login.id+",'"+date+"',"+max+","+creditValue+",'"+creditType+ "','debit','"+ex1+"');");
+        stmt.executeUpdate("insert INTO DebitCreditInfo (userid, dates, relation, amount, accountName,typ,explanation) values("+login.id+",'"+date+"',"+max+","+creditValue+",'"+creditType+ "','credit','"+ex1+"');");
 
     }
     public void storeDebitCredit2(double debitValue,double creditValue,double RemainDebit,double RemainCredit,
