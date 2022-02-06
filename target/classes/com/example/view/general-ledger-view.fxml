@@ -28,14 +28,15 @@
             <Font name="System Bold Italic" size="30.0" />
          </font>
       </Text>
-      <TableView layoutX="194.0" layoutY="106.0" prefHeight="438.0" prefWidth="628.0">
+      <TableView fx:id="tableView" layoutX="194.0" layoutY="106.0" prefHeight="438.0" prefWidth="909.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Date" />
-          <TableColumn prefWidth="216.800048828125" text="Explanetion" />
-            <TableColumn prefWidth="163.199951171875" text="Debit" />
-            <TableColumn prefWidth="81.60003662109375" text="Credit" />
-            <TableColumn prefWidth="91.99993896484375" text="Balance" />
-            <TableColumn prefWidth="75.0" text="Column X" />
+          <TableColumn fx:id="dateCell" prefWidth="75.0" text="Date" />
+          <TableColumn fx:id="exCell" prefWidth="216.800048828125" text="Explanetion" />
+            <TableColumn fx:id="useridCell" prefWidth="106.39996337890625" text="UserID" />
+            <TableColumn fx:id="userNameCell" prefWidth="184.79998779296875" text="UserName" />
+            <TableColumn fx:id="debitCell" prefWidth="110.4000244140625" text="Debit" />
+            <TableColumn fx:id="creditCell" prefWidth="114.39996337890625" text="Credit" />
+            <TableColumn fx:id="balanceCell" prefWidth="102.39996337890625" text="Balance" />
         </columns>
       </TableView>
       <Text layoutX="1172.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Setting Page" wrappingWidth="336.199951171875">
