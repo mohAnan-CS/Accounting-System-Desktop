@@ -103,11 +103,14 @@ public class GeneralLedgerModel {
 
             GeneralLedger gl = new GeneralLedger(user_id, relation, name, dates, accountName, amount, typ,balance,explanation);
             list.add(gl);
+
             System.out.println(gl.toString());
+
         }
 
         return list;
     }
+
 
     public String GetBalance(String AccountName) throws SQLException {
 
@@ -120,14 +123,11 @@ public class GeneralLedgerModel {
         String str="";
         while (rse.next()) {
 
+
             str = rse.getString("accountType");
 
 
         }
-
-
-        ObservableList<GeneralLedger> list = FXCollections.observableArrayList();
-
 
         ResultSet rs = stmt.executeQuery("select accountName, amount, typ from DebitCreditInfo  " + "where accountName = '" + AccountName + "';\n");
 
@@ -174,7 +174,28 @@ public class GeneralLedgerModel {
         }
 
         return balance +" "+ans+" "+AccountName;
+
+        }
+    public ObservableList Accounts() throws SQLException {
+
+        ObservableList<String> list = FXCollections.observableArrayList();
+        DataBaseConnection db = new DataBaseConnection();
+        Statement stmt = db.getConn().createStatement();
+
+        ResultSet rse = stmt.executeQuery("SELECT accountType,accountName FROM account ;" );
+
+        String str="";
+        while (rse.next()) {
+
+            str = rse.getString("accountName");
+            list.add(str);
+
+
+        }
+        return list;
     }
+
+
 
 
 }

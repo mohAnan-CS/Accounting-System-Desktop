@@ -32,9 +32,9 @@ public class Main extends Application {
 
     public static void main(String[] args) throws SQLException {
 
-        launch();
-//        GeneralLedgerModel g = new GeneralLedgerModel();
-//        System.out.println( g.GetBalance("cash") );
+        //launch();
+        GeneralLedgerModel g = new GeneralLedgerModel();
+        System.out.println( g.GetBalance("cash") );
 
 
     }
