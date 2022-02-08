@@ -114,7 +114,7 @@ public class GeneralLedgerModel {
 
     public String GetBalance(String AccountName) throws SQLException {
 
-        double balance=0;
+        double balance=0,deb=0,cred=0;
         DataBaseConnection db = new DataBaseConnection();
         Statement stmt = db.getConn().createStatement();
 
@@ -141,17 +141,21 @@ public class GeneralLedgerModel {
                 // d+  c-
                 if (typ.equalsIgnoreCase("debit")){
                     balance+=amount;
+                    deb += amount;
                 }
                 else {
                     balance-=amount;
+                    deb -= amount;
                 }
             }
             else {
                 if (typ.equalsIgnoreCase("debit")){
                     balance-=amount;
+                    cred-=amount;
                 }
                 else {
                     balance+=amount;
+                    cred+=amount;
                 }
             }
         }
@@ -172,7 +176,8 @@ public class GeneralLedgerModel {
                 ans = "Debit";
             }
         }
-
+        System.out.println(cred);
+        System.out.println(deb);
         return balance +" "+ans+" "+AccountName;
 
         }
@@ -189,8 +194,6 @@ public class GeneralLedgerModel {
 
             str = rse.getString("accountName");
             list.add(str);
-
-
         }
         return list;
     }

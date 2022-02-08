@@ -1,7 +1,10 @@
 package model;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import sql.DataBaseConnection;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -21,6 +24,33 @@ public class UserSettingModel {
         Statement stmt = db.getConn().createStatement();
         stmt.executeUpdate("UPDATE user SET user_first_name = '"+FirstName+"', user_last_name = '"+LastName+"', user_pass = '"+pass+"', user_permission = '"+permission+"', user_salary = "+salary+", User_state ='"+state+"' , Address = '"+address+"','"+Phone+"' WHERE user_id = "+id+";");
 
+    }
+
+
+
+    public ObservableList Table() throws SQLException {
+
+        ObservableList<LoginTable> list = FXCollections.observableArrayList();
+        DataBaseConnection db = new DataBaseConnection();
+        Statement stmt = db.getConn().createStatement();
+
+        ResultSet rse = stmt.executeQuery("SELECT user_id,user_first_name,user_last_name,user_permission,user_salary,Address,PhoneNum,User_state FROM user " );
+
+        while (rse.next()) {
+
+           String fname = rse.getString("user_first_name");
+            String lname = rse.getString("user_last_name");
+            String UserName = fname + lname;
+            int id = rse.getInt("user_id");
+            String perm = rse.getString("user_permission");
+            String salary = rse.getString("user_salary")+"";
+            String add = rse.getString("Address");
+            String phone = rse.getString("PhoneNum");
+            String state =  rse.getString("User_state");
+            LoginTable l = new LoginTable(UserName,id,perm,salary,add,phone,state);
+            list.add(l);
+        }
+        return list;
     }
 
     public void delete(int id) throws SQLException {

@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import model.GeneralJournalModel;
 import model.GeneralLedgerModel;
+import model.TransactionModel;
 
 import java.io.IOException;
 
@@ -32,11 +33,9 @@ public class Main extends Application {
 
     public static void main(String[] args) throws SQLException {
 
-        //launch();
+        launch();
         GeneralLedgerModel g = new GeneralLedgerModel();
-        System.out.println( g.GetBalance("cash") );
-
-
+        g.GetBalance("cash");
     }
 
     
