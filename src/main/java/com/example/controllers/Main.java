@@ -30,11 +30,10 @@ public class Main extends Application {
 
     }
 
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) {
 
-        //launch();
-        GeneralLedgerModel g = new GeneralLedgerModel();
-        System.out.println( g.GetBalance("cash") );
+        launch();
+
 
 
     }

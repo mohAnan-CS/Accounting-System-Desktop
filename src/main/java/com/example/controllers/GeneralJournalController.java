@@ -47,6 +47,8 @@ public class GeneralJournalController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        //System.out.println(tableViewJournalLedger.getSelectionModel().getSelectedItems().toString());
+
         try {
             setAllCellValueFactory();
             fillJournalList();
@@ -84,7 +86,6 @@ public class GeneralJournalController implements Initializable {
         //ObservableList<GeneralJournalTableView> list = FXCollections.observableArrayList();
         int relation = 1 ;
         for (int i = 0  ; i < lisGeneralJournal.size() ; i++){
-
 
             if (lisGeneralJournal.get(i).getRelation() != relation){
 

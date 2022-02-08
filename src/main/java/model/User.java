@@ -5,18 +5,14 @@ import javafx.beans.property.SimpleStringProperty;
 
 public class User {
 
-    private int id ;
-    private String name;
-    private String phone;
-    private String address;
-    private String salary;
-    private String email;
-    private String permission;
 
-    public User(int id, String name, String phone, String address, String salary
-            , String email, String permission) {
+    private int id ;
+    private String first , last , phone , address , salary , email , permission ;
+
+    public User(int id, String first, String last, String phone, String address, String salary, String email, String permission) {
         this.id = id;
-        this.name = name;
+        this.first = first;
+        this.last = last;
         this.phone = phone;
         this.address = address;
         this.salary = salary;
@@ -32,12 +28,20 @@ public class User {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirst() {
+        return first;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirst(String first) {
+        this.first = first;
+    }
+
+    public String getLast() {
+        return last;
+    }
+
+    public void setLast(String last) {
+        this.last = last;
     }
 
     public String getPhone() {

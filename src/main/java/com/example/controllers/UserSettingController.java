@@ -1,5 +1,6 @@
 package com.example.controllers;
 
+import com.example.controllers.TableViewClass.TrialBalanceTableView;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -14,10 +15,13 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import model.GeneralLedgerModel;
+import model.TrialBalanceModel;
 import model.User;
-
+import model.UserSettingModel;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class UserSettingController implements Initializable {
@@ -44,7 +48,10 @@ public class UserSettingController implements Initializable {
     private TableColumn<User, String> salary;
 
     @FXML
-    private TableColumn<User, String> email;
+    private TableColumn<User, String> firstName;
+
+    @FXML
+    private TableColumn<User, String> lastName;
 
     @FXML
     private TableColumn<User, String> permission;
@@ -56,23 +63,35 @@ public class UserSettingController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+
+
+        setAllCellValueFactory();
+        try {
+            fillLedgerList();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+
+    private void setAllCellValueFactory(){
+
         id.setCellValueFactory(new PropertyValueFactory<>("id"));
-        name.setCellValueFactory(new PropertyValueFactory<>("name"));
+        firstName.setCellValueFactory(new PropertyValueFactory<>("first"));
         phone.setCellValueFactory(new PropertyValueFactory<>("phone"));
         address.setCellValueFactory(new PropertyValueFactory<>("address"));
         salary.setCellValueFactory(new PropertyValueFactory<>("salary"));
-        email.setCellValueFactory(new PropertyValueFactory<>("email"));
+        lastName.setCellValueFactory(new PropertyValueFactory<>("last"));
         permission.setCellValueFactory(new PropertyValueFactory<>("permission"));
 
+    }
 
-        User user = new User(1, "Mohammad Anan" , "059324345" , "Tulkarm" , "1400$" ,
-                "mohammad@hotmail.com" , "maneger");
+    private void fillLedgerList() throws SQLException {
 
-
-        userList.add(user);
-
-        tableViewUser.setItems(userList);
-
+        UserSettingModel userSettingModel = new UserSettingModel();
+        //userSettingModel
     }
 
     @FXML

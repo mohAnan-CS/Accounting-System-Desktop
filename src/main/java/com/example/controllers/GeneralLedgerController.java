@@ -78,7 +78,7 @@ public class GeneralLedgerController implements Initializable {
 
     }
 
-    public void setAllCellValueFactory(){
+    private void setAllCellValueFactory(){
 
         this.dateCell.setCellValueFactory(new PropertyValueFactory<>("date"));
         this.exCell.setCellValueFactory(new PropertyValueFactory<>("ex"));

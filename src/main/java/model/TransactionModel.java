@@ -16,6 +16,7 @@ public class TransactionModel {
 
         DataBaseConnection db = new DataBaseConnection();
         ObservableList list = FXCollections.observableArrayList();
+        list.add(null);
 
         Statement stmt = db.getConn().createStatement();
         ResultSet rs = stmt.executeQuery("SELECT accountRef, accountName FROM account;" );
@@ -33,6 +34,7 @@ public class TransactionModel {
 
         DataBaseConnection db = new DataBaseConnection();
         ObservableList list = FXCollections.observableArrayList();
+        list.add(null);
 
         Statement stmt = db.getConn().createStatement();
         ResultSet rs = stmt.executeQuery("SELECT accountRef, accountName FROM account;" );
@@ -74,7 +76,8 @@ public class TransactionModel {
 
     }
     public void storeDebitCredit2(double debitValue,double creditValue,double RemainDebit,double RemainCredit,
-                                    String RemainCreditType,String RemainDebitType,String debitType,String creditType,String exDebit ,String exDebitRemain,String exCredit,String exCreditRemain) throws SQLException {
+                                    String RemainCreditType,String RemainDebitType,String debitType,String creditType,
+                                  String exDebit ,String exDebitRemain,String exCredit,String exCreditRemain) throws SQLException {
 
         DataBaseConnection db = new DataBaseConnection();
         Statement stmt = db.getConn().createStatement();
@@ -92,7 +95,7 @@ public class TransactionModel {
         max++;
 
 
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM/dd/yyyy");
         LocalDateTime now = LocalDateTime.now();
         String date = dtf.format(now);
 
@@ -106,43 +109,47 @@ public class TransactionModel {
             System.out.println("4");
         }
         else if (debitValue != 0 && creditValue != 0 && RemainDebit !=0 && RemainCredit == 0){
+            stmt.executeUpdate("insert INTO DebitCreditInfo (userid, dates, relation, amount, accountName,typ,explanation) values("+login.id+",'"+date+"',"+max+","+debitValue+",'"+debitType+ "','debit','"+exDebit+"');");
+            stmt.executeUpdate("insert INTO DebitCreditInfo (userid, dates, relation, amount, accountName,typ,explanation) values("+login.id+",'"+date+"',"+max+","+RemainDebit+",'"+debitType+ "','debit','"+exDebitRemain+"');");
 
-            stmt.executeUpdate("insert INTO DebitCreditInfo (userid, dates, relation, amount, accountName,typ) values("+login.id+",'"+date+"',"+max+","+debitValue+",'"+debitType+ "','debit','"+exDebit+"');");
-            stmt.executeUpdate("insert INTO DebitCreditInfo (userid, dates, relation, amount, accountName,typ) values("+login.id+",'"+date+"',"+max+","+creditValue+",'"+creditType+ "','credit','"+exCredit+"');");
-            stmt.executeUpdate("insert INTO DebitCreditInfo (userid, dates, relation, amount, accountName,typ) values(" + login.id + ",'" + date + "'," + max + "," + RemainDebit + ",'" + RemainDebitType + "','debit','"+exDebitRemain+"');");
+            stmt.executeUpdate("insert INTO DebitCreditInfo (userid, dates, relation, amount, accountName,typ,explanation) values(" + login.id + ",'" + date + "'," + max + "," + creditValue + ",'" + creditType + "','credit','"+exCreditRemain+"');");
+            //stmt.executeUpdate("insert INTO DebitCreditInfo (userid, dates, relation, amount, accountName,typ,explanation) values(" + login.id + ",'" + date + "'," + max + "," + RemainCredit + ",'" + RemainCreditType + "','credit','"+exCreditRemain+"');");
             //stmt.executeUpdate("insert INTO DebitCreditInfo (userid, dates, relation, amount, accountName) values(" + login.id + ",'" + date + "'," + max + "," + RemainDebit + ",'" + RemainDebitType + "','debit');");
             System.out.println("3d");
         }
         else if (debitValue != 0 && creditValue != 0 && RemainDebit ==0 && RemainCredit != 0){
-            stmt.executeUpdate("insert INTO DebitCreditInfo (userid, dates, relation, amount, accountName,typ) values("+login.id+",'"+date+"',"+max+","+debitValue+",'"+debitType+ "','debit','"+exDebit+"');");
-            stmt.executeUpdate("insert INTO DebitCreditInfo (userid, dates, relation, amount, accountName,typ) values("+login.id+",'"+date+"',"+max+","+creditValue+",'"+creditType+ "','credit','"+exCredit+"');");
+            stmt.executeUpdate("insert INTO DebitCreditInfo (userid, dates, relation, amount, accountName,typ,explanation) values("+login.id+",'"+date+"',"+max+","+debitValue+",'"+debitType+ "','debit','"+exDebit+"');");
+            stmt.executeUpdate("insert INTO DebitCreditInfo (userid, dates, relation, amount, accountName,typ,explanation) values("+login.id+",'"+date+"',"+max+","+creditValue+",'"+creditType+ "','credit','"+exCredit+"');");
 
-            stmt.executeUpdate("insert INTO DebitCreditInfo (userid, dates, relation, amount, accountName,typ) values(" + login.id + ",'" + date + "'," + max + "," + RemainCredit + ",'" + RemainCreditType +  "','credit','"+exCreditRemain+"');");
+            stmt.executeUpdate("insert INTO DebitCreditInfo (userid, dates, relation, amount, accountName,typ,explanation) values(" + login.id + ",'" + date + "'," + max + "," + RemainCredit + ",'" + RemainCreditType + "','credit','"+exCreditRemain+"');");
+            System.out.println("3c");
             System.out.println("3c");
         }
         else if (debitValue == 0 && creditValue != 0 && RemainDebit !=0 && RemainCredit != 0){
 
-            stmt.executeUpdate("insert INTO DebitCreditInfo (userid, dates, relation, amount, accountName,typ) values("+login.id+",'"+date+"',"+max+","+creditValue+",'"+creditType+ "','credit','"+exCredit+"');");
 
-            stmt.executeUpdate("insert INTO DebitCreditInfo (userid, dates, relation, amount, accountName,typ) values(" + login.id + ",'" + date + "'," + max + "," + RemainDebit + ",'" + RemainDebitType +"','debit','"+exDebitRemain+"');");
-            stmt.executeUpdate("insert INTO DebitCreditInfo (userid, dates, relation, amount, accountName,typ) values(" + login.id + ",'" + date + "'," + max + "," + RemainCredit + ",'" + RemainCreditType + "','credit','"+exCreditRemain+"');");
+            stmt.executeUpdate("insert INTO DebitCreditInfo (userid, dates, relation, amount, accountName,typ,explanation) values("+login.id+",'"+date+"',"+max+","+RemainDebit+",'"+debitType+ "','debit','"+exDebitRemain+"');");
+            stmt.executeUpdate("insert INTO DebitCreditInfo (userid, dates, relation, amount, accountName,typ,explanation) values("+login.id+",'"+date+"',"+max+","+creditValue+",'"+creditType+ "','credit','"+exCredit+"');");
+            stmt.executeUpdate("insert INTO DebitCreditInfo (userid, dates, relation, amount, accountName,typ,explanation) values(" + login.id + ",'" + date + "'," + max + "," + RemainCredit + ",'" + RemainCreditType + "','credit','"+exCreditRemain+"');");
+            System.out.println("22ccccccccccccccccccccccccccccccccccccc");
 
         }
         else if (debitValue != 0 && creditValue == 0 && RemainDebit !=0 && RemainCredit != 0){
-            stmt.executeUpdate("insert INTO DebitCreditInfo (userid, dates, relation, amount, accountName,typ) values("+login.id+",'"+date+"',"+max+","+debitValue+",'"+debitType+ "','debit','"+exDebit+"');");
-            stmt.executeUpdate("insert INTO DebitCreditInfo (userid, dates, relation, amount, accountName,typ) values(" + login.id + ",'" + date + "'," + max + "," + RemainDebit + ",'" + RemainDebitType + "','debit','"+exDebitRemain+"');");
-            stmt.executeUpdate("insert INTO DebitCreditInfo (userid, dates, relation, amount, accountName,typ) values(" + login.id + ",'" + date + "'," + max + "," + RemainCredit + ",'" + RemainCreditType + "','credit','"+exCreditRemain+"');");
+
+            stmt.executeUpdate("insert INTO DebitCreditInfo (userid, dates, relation, amount, accountName,typ,explanation) values("+login.id+",'"+date+"',"+max+","+debitValue+",'"+debitType+ "','debit','"+exDebit+"');");
+            stmt.executeUpdate("insert INTO DebitCreditInfo (userid, dates, relation, amount, accountName,typ,explanation) values("+login.id+",'"+date+"',"+max+","+RemainDebit+",'"+debitType+ "','debit','"+exDebitRemain+"');");
+            stmt.executeUpdate("insert INTO DebitCreditInfo (userid, dates, relation, amount, accountName,typ,explanation) values(" + login.id + ",'" + date + "'," + max + "," + RemainCredit + ",'" + RemainCreditType + "','credit','"+exCreditRemain+"');");
             System.out.println("4");
         }
         else if (debitValue == 0 && creditValue == 0 && RemainDebit !=0 && RemainCredit != 0){
             stmt.executeUpdate("insert INTO DebitCreditInfo (userid, dates, relation, amount, accountName,typ) values(" + login.id + ",'" + date + "'," + max + "," + RemainDebit + ",'" + RemainDebitType + "','debit','"+exDebitRemain+"');");
             stmt.executeUpdate("insert INTO DebitCreditInfo (userid, dates, relation, amount, accountName,typ) values(" + login.id + ",'" + date + "'," + max + "," + RemainCredit + ",'" + RemainCreditType + "','credit','"+exCreditRemain+"');");
-            System.out.println("4");
+            System.out.println("5");
         }
         else if(debitValue != 0 && creditValue != 0 && RemainDebit == 0 && RemainCredit == 0){
             stmt.executeUpdate("insert INTO DebitCreditInfo (userid, dates, relation, amount, accountName,typ) values("+login.id+",'"+date+"',"+max+","+debitValue+",'"+debitType+ "','debit','"+exDebit+"');");
             stmt.executeUpdate("insert INTO DebitCreditInfo (userid, dates, relation, amount, accountName,typ) values("+login.id+",'"+date+"',"+max+","+creditValue+",'"+creditType+ "','credit','"+exCredit+"');");
-
+            System.out.println("666");
         }
     }
 

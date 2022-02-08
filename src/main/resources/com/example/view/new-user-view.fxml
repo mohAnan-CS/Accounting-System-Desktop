@@ -3,7 +3,6 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -74,6 +73,11 @@
                <VBox.margin>
                   <Insets top="5.0" />
                </VBox.margin></TextField>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Salary">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin></Text>
+            <TextField fx:id="textFieldSalary" prefHeight="30.0" promptText="Enter user salary" style="-fx-background-radius: 20px;" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Permission">
                <VBox.margin>
                   <Insets top="10.0" />
@@ -82,14 +86,6 @@
                <VBox.margin>
                   <Insets top="5.0" />
                </VBox.margin></ComboBox>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Salary">
-               <VBox.margin>
-                  <Insets top="10.0" />
-               </VBox.margin></Text>
-            <Spinner fx:id="spinnerSalary" prefHeight="30.0">
-               <VBox.margin>
-                  <Insets top="5.0" />
-               </VBox.margin></Spinner>
          </children>
       </VBox>
       <Button layoutX="200.0" layoutY="649.0" mnemonicParsing="false" onAction="#btnAddUserOnAction" prefHeight="30.0" prefWidth="199.0" style="-fx-background-radius: 20px;" text="Add User">

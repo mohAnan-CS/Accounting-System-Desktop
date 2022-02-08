@@ -7,7 +7,7 @@ import java.sql.Statement;
 
 public class UserSettingModel {
 
-    public void AddUser(int id,String FirstName,String LastName,String pass,String Phone ,String address,String permission,double salary) throws SQLException {
+    public void addUser(int id, String FirstName, String LastName, String pass, String Phone , String address, String permission, double salary) throws SQLException {
 
         DataBaseConnection db = new DataBaseConnection();
         Statement stmt = db.getConn().createStatement();
@@ -15,7 +15,7 @@ public class UserSettingModel {
                 "VALUES ("+id+",'"+FirstName+"','"+LastName+"','"+pass+"','"+permission+"',"+salary+",'Working','"+address+"','"+Phone+"');");
 
     }
-    public void edit(int id,String FirstName,String LastName,String pass,String Phone ,String address,String permission,double salary,String state) throws SQLException {
+    public void edit(int id, String FirstName, String LastName, String pass, String Phone , String address, String permission, double salary, String state) throws SQLException {
 
         DataBaseConnection db = new DataBaseConnection();
         Statement stmt = db.getConn().createStatement();

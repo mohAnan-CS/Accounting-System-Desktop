@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ButtonType?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+
+<DialogPane contentText="null" headerText="Enter user id to delete" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.EditUserDialogController">
+   <content>
+      <AnchorPane prefHeight="170.0" prefWidth="356.0">
+         <children>
+            <HBox layoutX="62.0" layoutY="72.0" prefHeight="32.0" prefWidth="232.0" spacing="20.0">
+               <children>
+                  <Label prefHeight="18.0" prefWidth="54.0" text="User id" />
+                  <TextField prefHeight="26.0" prefWidth="185.0" promptText="Enter user id" style="-fx-background-radius: 20px;" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </content>
+   <buttonTypes>
+      <ButtonType fx:constant="CANCEL" />
+      <ButtonType fx:constant="NEXT" />
+   </buttonTypes>
+</DialogPane>

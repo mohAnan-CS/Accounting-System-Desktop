@@ -51,17 +51,17 @@ public class HomeController implements Initializable {
         String userLastName = LoginModel.LName ;
         String userPermission = LoginModel.permission ;
 
-        if (userPermission.equalsIgnoreCase("manager")){
+        if (userPermission.equalsIgnoreCase("Manager")){
             textUserName.setText(userFirstName + " " + userLastName + " ( Manager )");
-            btnTransaction.setDisable(true);
+            //btnTransaction.setDisable(true);
         }
-        else if (userPermission.equalsIgnoreCase("chiveaccount")){
+        else if (userPermission.equalsIgnoreCase("Chive Account")){
             textUserName.setText(userFirstName + " " + userLastName + " ( Chive Account )");
-            btnUserSetting.setDisable(true);
+            //btnUserSetting.setDisable(true);
         }
-        else if (userPermission.equalsIgnoreCase("account")){
+        else if (userPermission.equalsIgnoreCase("Account")){
             textUserName.setText(userFirstName + " " + userLastName + " ( Account )");
-            btnUserSetting.setDisable(true);
+            //btnUserSetting.setDisable(true);
         }
 
     }
@@ -159,9 +159,8 @@ public class HomeController implements Initializable {
 
         stackPane.getChildren().removeAll();
         Parent fxml = FXMLLoader.load(getClass().getResource("/com/example/view/"+xmlFileName.concat(".fxml")));
-        if (stackPane.getChildren().size() != 0 ) {
+        if (stackPane.getChildren().size() != 0 )
             stackPane.getChildren().removeAll(stackPane.getChildren().get(0));
-        }
         stackPane.getChildren().addAll(fxml);
 
     }
