@@ -4,31 +4,17 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 public class User {
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", first='" + first + '\'' +
-                ", last='" + last + '\'' +
-                ", phone='" + phone + '\'' +
-                ", address='" + address + '\'' +
-                ", salary='" + salary + '\'' +
-                ", email='" + email + '\'' +
-                ", permission='" + permission + '\'' +
-                '}';
-    }
 
     private int id ;
-    private String first , last , phone , address , salary , email , permission ;
+    private String first , last , phone , address , salary  , permission ;
 
-    public User(int id, String first, String last, String phone, String address, String salary, String email, String permission) {
+    public User(int id, String first, String last, String phone, String address, String salary, String permission) {
         this.id = id;
         this.first = first;
         this.last = last;
         this.phone = phone;
         this.address = address;
         this.salary = salary;
-        this.email = email;
         this.permission = permission;
     }
 
@@ -80,19 +66,24 @@ public class User {
         this.salary = salary;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getPermission() {
         return permission;
     }
 
     public void setPermission(String permission) {
         this.permission = permission;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", first='" + first + '\'' +
+                ", last='" + last + '\'' +
+                ", phone='" + phone + '\'' +
+                ", address='" + address + '\'' +
+                ", salary='" + salary + '\'' +
+                ", permission='" + permission + '\'' +
+                '}';
     }
 }

@@ -60,6 +60,7 @@ public class NewUserController implements Initializable {
             return;
 
         storeUserInformation();
+        UserSettingController.newUserStage.close();
 
 
     }

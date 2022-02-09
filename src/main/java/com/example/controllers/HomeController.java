@@ -24,7 +24,7 @@ public class HomeController implements Initializable {
     private Button btnTransaction;
 
     @FXML
-    private Button btnUserSetting;
+    public Button btnUserSetting = new Button();
 
     @FXML
     private StackPane stackPane;

@@ -18,6 +18,7 @@ public class CurrencyModel {
     public String currentCurrency = "EUR";
 
     ArrayList<String> currencyType = new ArrayList<String>();
+    ArrayList<String> currencyName = new ArrayList<String>();
 
     public void getCurrency() throws SQLException {
 
@@ -28,9 +29,14 @@ public class CurrencyModel {
 
 
         while (rse.next()) {
-
+            System.out.println("DFdf");
             String currency_type = rse.getString("currency_type");
+            String currency_name = rse.getString("currency_name");
+
+
+
             currencyType.add(currency_type);
+            currencyName.add(currency_name);
         }
     }
 
@@ -46,6 +52,53 @@ public class CurrencyModel {
             return false;
         }
         return true;
+    }
+
+    public void getCurr(){
+
+
+    }
+
+    public void calc() throws SQLException {
+
+
+        DataBaseConnection db = new DataBaseConnection();
+        Statement stmt = db.getConn().createStatement();
+        ArrayList<String> accountArr = new ArrayList<String>();
+        ResultSet rse = stmt.executeQuery("SELECT accountName,accountType FROM account;");
+
+
+        while (rse.next()) {
+            String accountName = rse.getString("accountName");
+            String accountType = rse.getString("accountType");
+
+            accountArr.add(accountName);
+        }
+
+        ArrayList<String> arrStr = new ArrayList<String>();
+        ArrayList<Double> arrBalance = new ArrayList<Double>();
+
+        for (int i=0;i<accountArr.size();i++){
+             rse = stmt.executeQuery("SELECT accountName,amount FROM DebitCreditInfo WHERE accountName = '" + accountArr.get(i) + "';");
+            String str = "";
+            double balance=0;
+            while (rse.next()) {
+
+                str = rse.getString("accountName");
+                balance += rse.getDouble("amount");
+            }
+            if ( !str.isEmpty() ){
+                arrStr.add(str);
+                arrBalance.add(balance);
+            }
+
+
+        }
+        System.out.println(arrStr.get(0));
+        for (int i=0;i<arrStr.size();i++) {
+
+            stmt.executeUpdate("insert INTO report (amount,accountName) values (" + arrBalance.get(i) + ",'" + arrStr.get(i)+ "');");
+        }
     }
 
     public String addCurrency(String currency) throws SQLException, IOException {
