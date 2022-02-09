@@ -34,5 +34,12 @@
          </font>
       </Text>
       <Line endX="-100.0" endY="352.5999755859375" layoutX="1227.0" layoutY="212.0" startX="-100.0" startY="-135.0" strokeWidth="3.0" />
+      <Text layoutX="376.0" layoutY="522.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Text>
+      <Text layoutX="502.0" layoutY="518.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1500" />
+      <Text layoutX="658.0" layoutY="518.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1700" />
    </children>
 </Pane>

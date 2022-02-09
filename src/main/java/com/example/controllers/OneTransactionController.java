@@ -2,10 +2,7 @@ package com.example.controllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import model.TransactionModel;
 
 import java.net.URL;
@@ -205,12 +202,13 @@ public class OneTransactionController implements Initializable {
             alert.setTitle(titleAlert);
             alert.setHeaderText(null);
             alert.setContentText(contentText);
+            DialogPane dialogPane = alert.getDialogPane();
+            dialogPane.getStylesheets().add(
+                    getClass().getResource("myDialogs.css").toExternalForm());
+            dialogPane.getStyleClass().add("myDialog");
             alert.showAndWait();
         }
 
     }
-
-
-
 
 }
