@@ -33,7 +33,7 @@ public class Main extends Application {
 
         CurrencyModel c = new CurrencyModel();
         c.calc();
-        launch();
+       // launch();
 //        Currency c = new Currency();
 //        System.out.println(c.readFromWeb("https://currencies.apps.grandtrunk.net/getlatest/USD/KRW"));
 //        System.out.println( c.addCurrency("KRW") );

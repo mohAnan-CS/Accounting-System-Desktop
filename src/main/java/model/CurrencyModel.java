@@ -19,6 +19,7 @@ public class CurrencyModel {
 
     ArrayList<String> currencyType = new ArrayList<String>();
     ArrayList<String> currencyName = new ArrayList<String>();
+    ArrayList<String> currencyValue = new ArrayList<String>();
 
     public void getCurrency() throws SQLException {
 
@@ -29,15 +30,13 @@ public class CurrencyModel {
 
 
         while (rse.next()) {
-            System.out.println("DFdf");
             String currency_type = rse.getString("currency_type");
             String currency_name = rse.getString("currency_name");
-
-
 
             currencyType.add(currency_type);
             currencyName.add(currency_name);
         }
+
     }
 
     public boolean checkNumber(String Num){
@@ -61,13 +60,13 @@ public class CurrencyModel {
 
     public void calc() throws SQLException {
 
-
         DataBaseConnection db = new DataBaseConnection();
         Statement stmt = db.getConn().createStatement();
         ArrayList<String> accountArr = new ArrayList<String>();
+
+        stmt.executeUpdate("truncate table report;");
+
         ResultSet rse = stmt.executeQuery("SELECT accountName,accountType FROM account;");
-
-
         while (rse.next()) {
             String accountName = rse.getString("accountName");
             String accountType = rse.getString("accountType");
