@@ -11,6 +11,19 @@ public class LoginTable {
     String phone;
     String state ;
 
+    @Override
+    public String toString() {
+        return "LoginTable{" +
+                "UserName='" + UserName + '\'' +
+                ", id=" + id +
+                ", perm='" + perm + '\'' +
+                ", salary='" + salary + '\'' +
+                ", add='" + add + '\'' +
+                ", phone='" + phone + '\'' +
+                ", state='" + state + '\'' +
+                '}';
+    }
+
     public LoginTable(String userName, int id, String perm, String salary, String add, String phone, String state) {
         UserName = userName;
         this.id = id;

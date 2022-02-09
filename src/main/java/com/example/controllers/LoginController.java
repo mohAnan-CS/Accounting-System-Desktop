@@ -50,15 +50,12 @@ public class LoginController implements Initializable {
                 throw new IllegalArgumentException("wrong info");
 
 
-        }catch (SQLException | IOException e) {
-            //showAlert("Error", "ERROR", e.getMessage());
-            e.printStackTrace();
+        }catch (SQLException e) {
+            showAlert("Error", "ERROR", e.getMessage());
         } catch (IllegalArgumentException illegalArgumentException){
-            //showAlert("Warning" , "WARNING" , illegalArgumentException.getMessage());
-            illegalArgumentException.printStackTrace();
+            showAlert("Warning" , "WARNING" , illegalArgumentException.getMessage());
         } catch (Exception exception){
-            //showAlert("Error", "ERROR", exception.getMessage());
-            exception.printStackTrace();
+            showAlert("Error", "ERROR", exception.getMessage());
         }
 
 
@@ -113,14 +110,22 @@ public class LoginController implements Initializable {
 
     }
 
-    private void switchStage() throws IOException{
+    private void switchStage() {
 
+        try {
 
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/example/view/home-view.fxml")));
-        Main.STAGE.setScene(new Scene(root));
-        Main.STAGE.centerOnScreen();
-        Main.STAGE.setMaximized(true);
-        Main.STAGE.show();
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/example/view/home-view.fxml")));
+            Main.STAGE.setScene(new Scene(root));
+            Main.STAGE.centerOnScreen();
+            Main.STAGE.setMaximized(true);
+            Main.STAGE.show();
+
+        }catch (IOException ioException){
+            showAlert("Error" , "ERROR" , ioException.getMessage());
+        }catch (Exception exception){
+            showAlert("Error" , "ERROR" , exception.getMessage());
+        }
+
 
     }
 

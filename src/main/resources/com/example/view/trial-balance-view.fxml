@@ -16,14 +16,13 @@
             <Image url="@../../../Images/investments-balance.png" />
          </image>
       </ImageView>
-      <TableView layoutX="110.0" layoutY="127.0" prefHeight="359.0" prefWidth="625.0">
+      <TableView fx:id="tableViewTrialBalance" layoutX="110.0" layoutY="127.0" prefHeight="359.0" prefWidth="625.0">
         <columns>
-          <TableColumn prefWidth="324.0000457763672" text="ACCOUNT" />
-          <TableColumn minWidth="0.0" prefWidth="139.99993896484375" text="DEBIT" />
-            <TableColumn prefWidth="160.800048828125" text="CREDIT" />
+          <TableColumn fx:id="accountCell" prefWidth="324.0000457763672" text="ACCOUNT" />
+          <TableColumn fx:id="debitCell" minWidth="0.0" prefWidth="139.99993896484375" text="DEBIT" />
+            <TableColumn fx:id="creditCell" prefWidth="160.800048828125" text="CREDIT" />
         </columns>
       </TableView>
-      <Text layoutX="391.0" layoutY="512.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total                     2300                                    2000" wrappingWidth="296.0628662109375" />
       <Text layoutX="1208.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trial Balance" wrappingWidth="285.7999267578125">
          <font>
             <Font name="System Bold" size="40.0" />

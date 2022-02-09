@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import sql.DataBaseConnection;
 
+import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -14,7 +15,7 @@ public class GeneralLedgerModel {
 
         DataBaseConnection db = new DataBaseConnection();
         Statement stmt = db.getConn().createStatement();
-        ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM account;" );
+        ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM account;");
         int count = 0;
         while (rs.next()) {
             count = rs.getInt(1);
@@ -28,7 +29,7 @@ public class GeneralLedgerModel {
         ObservableList<GeneralLedger> list = FXCollections.observableArrayList();
         DataBaseConnection db = new DataBaseConnection();
         Statement stmt = db.getConn().createStatement();
-        ResultSet rs = stmt.executeQuery("select u.user_id, u.user_first_name, u.user_last_name, d.dates, d.accountName, d.amount, d.typ ,d.relation,d.explanation from user u ,DebitCreditInfo d where d.userid = u.user_id;\n" );
+        ResultSet rs = stmt.executeQuery("select u.user_id, u.user_first_name, u.user_last_name, d.dates, d.accountName, d.amount, d.typ ,d.relation,d.explanation from user u ,DebitCreditInfo d where d.userid = u.user_id;\n");
 
         while (rs.next()) {
 
@@ -36,27 +37,30 @@ public class GeneralLedgerModel {
             int relation = rs.getInt("relation");
             String user_first_name = rs.getString("user_first_name");
             String user_last_name = rs.getString("user_last_name");
-            String name = user_first_name +" "+user_last_name;
+            String name = user_first_name + " " + user_last_name;
             String dates = rs.getString("dates");
             String accountName = rs.getString("accountName");
             double amount = rs.getDouble("amount");
             String typ = rs.getString("typ");
             String explanation = rs.getString("explanation");
 
-            GeneralLedger gl = new GeneralLedger(user_id,relation,name,dates,accountName,amount,typ,0,explanation);
+            GeneralLedger gl = new GeneralLedger(user_id, relation, name, dates, accountName, amount, typ, 0, explanation);
             list.add(gl);
         }
         return list;
     }
-    public ObservableList Search(String AccountName) throws SQLException {
 
-        double balance=0;
+
+
+    public ObservableList Search(String AccountName) throws SQLException, IOException {
+
+        double balance = 0;
         DataBaseConnection db = new DataBaseConnection();
         Statement stmt = db.getConn().createStatement();
 
-        ResultSet rse = stmt.executeQuery("SELECT accountType,accountName FROM account WHERE accountName = '"+AccountName+"';" );
+        ResultSet rse = stmt.executeQuery("SELECT accountType,accountName FROM account WHERE accountName = '" + AccountName + "';");
 
-        String str="";
+        String str = "";
         while (rse.next()) {
 
             str = rse.getString("accountType");
@@ -83,25 +87,22 @@ public class GeneralLedgerModel {
             double amount = rs.getDouble("amount");
             String typ = rs.getString("typ");
             String explanation = rs.getString("explanation");
-            if (str.equalsIgnoreCase("assets") || str.equalsIgnoreCase("expenses")){
+            if (str.equalsIgnoreCase("assets") || str.equalsIgnoreCase("expenses")) {
                 // d+  c-
-                if (typ.equalsIgnoreCase("debit")){
-                    balance+=amount;
+                if (typ.equalsIgnoreCase("debit")) {
+                    balance += amount;
+                } else {
+                    balance -= amount;
                 }
-                else {
-                    balance-=amount;
-                }
-            }
-            else {
-                if (typ.equalsIgnoreCase("debit")){
-                    balance-=amount;
-                }
-                else {
-                    balance+=amount;
+            } else {
+                if (typ.equalsIgnoreCase("debit")) {
+                    balance -= amount;
+                } else {
+                    balance += amount;
                 }
             }
 
-            GeneralLedger gl = new GeneralLedger(user_id, relation, name, dates, accountName, amount, typ,balance,explanation);
+            GeneralLedger gl = new GeneralLedger(user_id, relation, name, dates, accountName, amount, typ, balance, explanation);
             list.add(gl);
 
             System.out.println(gl.toString());
@@ -112,7 +113,7 @@ public class GeneralLedgerModel {
     }
 
 
-    public String GetBalance(String AccountName) throws SQLException {
+    public String GetBalance(String AccountName) throws SQLException, IOException {
 
         double balance=0,deb=0,cred=0;
         DataBaseConnection db = new DataBaseConnection();
@@ -178,18 +179,20 @@ public class GeneralLedgerModel {
         }
         System.out.println(cred);
         System.out.println(deb);
+
         return balance +" "+ans+" "+AccountName;
 
         }
+
     public ObservableList Accounts() throws SQLException {
 
         ObservableList<String> list = FXCollections.observableArrayList();
         DataBaseConnection db = new DataBaseConnection();
         Statement stmt = db.getConn().createStatement();
 
-        ResultSet rse = stmt.executeQuery("SELECT accountType,accountName FROM account ;" );
+        ResultSet rse = stmt.executeQuery("SELECT accountType,accountName FROM account ;");
 
-        String str="";
+        String str = "";
         while (rse.next()) {
 
             str = rse.getString("accountName");
@@ -197,8 +200,6 @@ public class GeneralLedgerModel {
         }
         return list;
     }
-
-
 
 
 }

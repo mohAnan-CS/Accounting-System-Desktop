@@ -55,15 +55,15 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <TableView fx:id="tableViewUser" layoutX="88.0" layoutY="175.0" prefHeight="381.0" prefWidth="926.0">
+      <TableView fx:id="tableViewUser" layoutX="201.0" layoutY="172.0" prefHeight="381.0" prefWidth="789.0">
         <columns>
-          <TableColumn fx:id="id" prefWidth="67.19997787475586" text="id" />
-          <TableColumn fx:id="name" prefWidth="115.20001220703125" text="name" />
-            <TableColumn fx:id="phone" prefWidth="102.40003967285156" text="phone" />
-            <TableColumn fx:id="address" minWidth="0.0" prefWidth="103.20001220703125" text="address" />
-            <TableColumn fx:id="salary" minWidth="0.0" prefWidth="75.20001220703125" text="salary" />
-            <TableColumn fx:id="email" prefWidth="171.199951171875" text="email" />
-            <TableColumn fx:id="permission" prefWidth="89.60003662109375" text="permission" />
+          <TableColumn fx:id="id" prefWidth="93.60000610351562" text="id" />
+          <TableColumn fx:id="firstName" prefWidth="105.60003662109375" text="first name" />
+            <TableColumn fx:id="lastName" prefWidth="112.79998779296875" text="last name" />
+            <TableColumn fx:id="address" minWidth="0.0" prefWidth="120.80001831054688" text="address" />
+            <TableColumn fx:id="phone" prefWidth="122.4000244140625" text="phone" />
+            <TableColumn fx:id="permission" prefWidth="110.4000244140625" text="permission" />
+            <TableColumn fx:id="salary" minWidth="0.0" prefWidth="120.0" text="salary" />
         </columns>
       </TableView>
    </children>

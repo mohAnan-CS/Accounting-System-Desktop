@@ -15,9 +15,11 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import model.CurrencyModel;
 import model.GeneralLedger;
 import model.GeneralLedgerModel;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -78,7 +80,7 @@ public class GeneralLedgerController implements Initializable {
 
     }
 
-    public void setAllCellValueFactory(){
+    private void setAllCellValueFactory(){
 
         this.dateCell.setCellValueFactory(new PropertyValueFactory<>("date"));
         this.exCell.setCellValueFactory(new PropertyValueFactory<>("ex"));
@@ -90,7 +92,7 @@ public class GeneralLedgerController implements Initializable {
 
     }
 
-    private void fillLedgerList(String accountName) throws SQLException {
+    private void fillLedgerList(String accountName) throws SQLException, IOException {
 
         GeneralLedgerModel generalLedgerModel = new GeneralLedgerModel();
         ObservableList<GeneralLedger> lisLedger= generalLedgerModel.Search(accountName);
@@ -99,6 +101,13 @@ public class GeneralLedgerController implements Initializable {
         for (int i = 0 ; i < lisLedger.size() ; i++){
 
             if (lisLedger.get(i).getTyp().equalsIgnoreCase("debit")) {
+
+                double balance=lisLedger.get(i).getBalance();
+                CurrencyModel c = new CurrencyModel();
+                String url = "https://currencies.apps.grandtrunk.net/getlatest/USD/"+c.currentCurrency;
+                double currencyValue = Double.parseDouble( c.readFromWeb( url ) );
+                lisLedger.get(i).setBalance( balance * currencyValue );
+
                 GeneralLedgerTableView generalLedgerTableView =
                         new GeneralLedgerTableView(lisLedger.get(i).getDate(),
                                 lisLedger.get(i).getExplanation(),
@@ -109,6 +118,12 @@ public class GeneralLedgerController implements Initializable {
                 listLedgerTableView.add(generalLedgerTableView);
 
             }else {
+
+                double balance=lisLedger.get(i).getBalance();
+                CurrencyModel c = new CurrencyModel();
+                String url = "https://currencies.apps.grandtrunk.net/getlatest/USD/"+c.currentCurrency;
+                double currencyValue = Double.parseDouble( c.readFromWeb( url ) );
+                lisLedger.get(i).setBalance( balance * currencyValue );
 
                 GeneralLedgerTableView generalLedgerTableView =
                         new GeneralLedgerTableView(lisLedger.get(i).getDate(),
@@ -143,7 +158,7 @@ public class GeneralLedgerController implements Initializable {
                 textTypeAccount.setText(button.getText());
                 try {
                     fillLedgerList(button.getText());
-                } catch (SQLException e) {
+                } catch (SQLException | IOException e) {
                     e.printStackTrace();
                 }
 

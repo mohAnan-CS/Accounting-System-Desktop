@@ -10,7 +10,7 @@ import java.sql.Statement;
 
 public class UserSettingModel {
 
-    public void AddUser(int id,String FirstName,String LastName,String pass,String Phone ,String address,String permission,double salary) throws SQLException {
+    public void addUser(int id, String FirstName, String LastName, String pass, String Phone , String address, String permission, double salary) throws SQLException {
 
         DataBaseConnection db = new DataBaseConnection();
         Statement stmt = db.getConn().createStatement();
@@ -18,7 +18,7 @@ public class UserSettingModel {
                 "VALUES ("+id+",'"+FirstName+"','"+LastName+"','"+pass+"','"+permission+"',"+salary+",'Working','"+address+"','"+Phone+"');");
 
     }
-    public void edit(int id,String FirstName,String LastName,String pass,String Phone ,String address,String permission,double salary,String state) throws SQLException {
+    public void edit(int id, String FirstName, String LastName, String pass, String Phone , String address, String permission, double salary, String state) throws SQLException {
 
         DataBaseConnection db = new DataBaseConnection();
         Statement stmt = db.getConn().createStatement();
@@ -41,6 +41,31 @@ public class UserSettingModel {
            String fname = rse.getString("user_first_name");
             String lname = rse.getString("user_last_name");
             String UserName = fname + lname;
+            int id = rse.getInt("user_id");
+            String perm = rse.getString("user_permission");
+            String salary = rse.getString("user_salary")+"";
+            String add = rse.getString("Address");
+            String phone = rse.getString("PhoneNum");
+            String state =  rse.getString("User_state");
+            LoginTable l = new LoginTable(UserName,id,perm,salary,add,phone,state);
+            list.add(l);
+        }
+        return list;
+    }
+
+    public ObservableList searchUser(int userId) throws SQLException {
+
+        ObservableList<LoginTable> list = FXCollections.observableArrayList();
+        DataBaseConnection db = new DataBaseConnection();
+        Statement stmt = db.getConn().createStatement();
+
+        ResultSet rse = stmt.executeQuery("SELECT user_id,user_first_name,user_last_name,user_permission,user_salary,Address,PhoneNum,User_state FROM user where user_id = "+userId+";" );
+
+        while (rse.next()) {
+
+            String fname = rse.getString("user_first_name");
+            String lname = rse.getString("user_last_name");
+            String UserName = fname +" "+ lname;
             int id = rse.getInt("user_id");
             String perm = rse.getString("user_permission");
             String salary = rse.getString("user_salary")+"";
