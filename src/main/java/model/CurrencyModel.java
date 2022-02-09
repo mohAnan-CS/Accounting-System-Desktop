@@ -17,11 +17,10 @@ public class CurrencyModel {
 
     public String currentCurrency = "EUR";
 
-    ArrayList<String> currencyType = new ArrayList<String>();
-    ArrayList<String> currencyName = new ArrayList<String>();
-    ArrayList<String> currencyValue = new ArrayList<String>();
 
-    public void getCurrency() throws SQLException {
+    ArrayList<Currency> currencyArr = new ArrayList<Currency>();
+
+    public void getCurrency() throws SQLException, IOException {
 
         DataBaseConnection db = new DataBaseConnection();
         Statement stmt = db.getConn().createStatement();
@@ -31,11 +30,16 @@ public class CurrencyModel {
 
         while (rse.next()) {
             String currency_type = rse.getString("currency_type");
-            String currency_name = rse.getString("currency_name");
-
-            currencyType.add(currency_type);
-            currencyName.add(currency_name);
+            String url = "https://currencies.apps.grandtrunk.net/getlatest/USD/";
+            url += currency_type;
+            double currValue =Double.parseDouble( readFromWeb(url) );
+            Currency c = new Currency(currency_type,currValue);
+            currencyArr.add(c);
         }
+        for (int i=0;i<currencyArr.size();i++){
+            System.out.println(currencyArr.get(i));
+        }
+
 
     }
 
@@ -106,18 +110,21 @@ public class CurrencyModel {
         Statement stmt = db.getConn().createStatement();
         String url = "https://currencies.apps.grandtrunk.net/getlatest/USD/";
         url += currency;
-
-       if (  checkNumber( readFromWeb(url) ) ){
+        String str = readFromWeb(url);
+       if (  checkNumber( str ) ){
 
            int flag = 0;
 
-           for (int i=0;i<currencyType.size();i++){
-               if (currency.equalsIgnoreCase(currencyType.get(i))){
+           for (int i=0;i<currencyArr.size();i++){
+               if (currency.equalsIgnoreCase(currencyArr.get(i).getCurrencyType())){
                    flag = 1;
                }
            }
            if (flag == 0){
                stmt.executeUpdate("insert INTO currency (currency_type) values ('"+currency+"');");
+
+               Currency c = new Currency(currency,Double.parseDouble(str) );
+               currencyArr.add(c);
                return "The Currency Was Added";
            }
            else{
@@ -129,9 +136,6 @@ public class CurrencyModel {
        else {
            return "You Added a Wrong Currency";
        }
-
-
-
     }
 
     public  String readFromWeb(String webURL) throws IOException {
