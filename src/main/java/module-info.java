@@ -5,6 +5,8 @@ module AccountingProgram {
     requires javafx.fxml;
     requires mysql.connector.java;
     requires java.sql;
+    requires jasperreports;
+
 
     opens sql;
     opens com.example.controllers ;

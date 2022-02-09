@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="IncomState" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cde775ca-9dfa-451f-86ee-99201aa4ebfa">
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[YWNjb3VudCAsMTUsMTUsYjJmOWFmYmItZWY1MS00MGE3LWE1MTktMWIxM2FkMWNjMjgwO2BEZWJp
+dENyZWRpdEluZm9gICwxMTcsMTUsZjcyODFlYmUtM2MxZi00YzkyLWI5MzktYWQyM2M5MDFkNjk3
+Ow==]]>
+	</property>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="274"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="714"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<queryString language="SQL">
+		<![CDATA[select a.accountRef,a.accountName,a.accountType,d.id,d.userid,d.relation,d.amount,d.typ,d.explanation from account a, DebitCreditInfo d where a.accountName = d.accountName]]>
+	</queryString>
+	<field name="accountRef" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="accountRef"/>
+		<property name="com.jaspersoft.studio.field.label" value="accountRef"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="account"/>
+	</field>
+	<field name="accountName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="accountName"/>
+		<property name="com.jaspersoft.studio.field.label" value="accountName"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="account"/>
+	</field>
+	<field name="accountType" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="accountType"/>
+		<property name="com.jaspersoft.studio.field.label" value="accountType"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="account"/>
+	</field>
+	<field name="id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="debitcreditinfo"/>
+	</field>
+	<field name="userid" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="userid"/>
+		<property name="com.jaspersoft.studio.field.label" value="userid"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="debitcreditinfo"/>
+	</field>
+	<field name="relation" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="relation"/>
+		<property name="com.jaspersoft.studio.field.label" value="relation"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="debitcreditinfo"/>
+	</field>
+	<field name="amount" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="amount"/>
+		<property name="com.jaspersoft.studio.field.label" value="amount"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="debitcreditinfo"/>
+	</field>
+	<field name="typ" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="typ"/>
+		<property name="com.jaspersoft.studio.field.label" value="typ"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="debitcreditinfo"/>
+	</field>
+	<field name="explanation" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="explanation"/>
+		<property name="com.jaspersoft.studio.field.label" value="explanation"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="debitcreditinfo"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="166" y="10" width="222" height="45" uuid="dcbbdf79-e768-480c-be2f-f68b48b83eff"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="26"/>
+				</textElement>
+				<text><![CDATA[MIS Company]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="260" y="0" width="156" height="30" uuid="c5edd548-7f0c-40b7-99d9-05bd571b4826"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Balance]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="104" y="0" width="156" height="30" uuid="76fbbc1c-4986-482f-9916-81c571a4947b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Expenss Account]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="132" y="0" width="100" height="20" uuid="1712eb46-0bdd-4290-b51c-3b4c000cdb06"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{accountName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="270" y="0" width="100" height="20" uuid="5d840a8d-a662-4993-93d2-24a10f350a73">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="917748a9-afb0-4f50-b43a-f1c1490b3da1"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

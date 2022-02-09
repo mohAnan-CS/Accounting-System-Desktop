@@ -7,8 +7,15 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.view.JasperViewer;
+import sql.DataBaseConnection;
 
 import java.net.URL;
+import java.sql.Connection;
 import java.util.ResourceBundle;
 
 public class IncomeStateController implements Initializable {
@@ -48,6 +55,24 @@ public class IncomeStateController implements Initializable {
 
 
 
+    }
+
+    @FXML
+    void btnShowReportOnAction() {
+
+        try {
+
+            DataBaseConnection db = new DataBaseConnection();
+            Connection conn = db.getConn();
+
+            String path = "IncomState.jrxml";
+            JasperReport jasperReport = JasperCompileManager.compileReport(path);
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport,null,conn);
+            JasperViewer.viewReport(jasperPrint);
+            conn.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
 }
