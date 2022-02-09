@@ -122,7 +122,7 @@ public class TransactionModel {
             stmt.executeUpdate("insert INTO DebitCreditInfo (userid, dates, relation, amount, accountName,typ,explanation) values("+login.id+",'"+date+"',"+max+","+creditValue+",'"+creditType+ "','credit','"+exCredit+"');");
 
             stmt.executeUpdate("insert INTO DebitCreditInfo (userid, dates, relation, amount, accountName,typ,explanation) values(" + login.id + ",'" + date + "'," + max + "," + RemainCredit + ",'" + RemainCreditType + "','credit','"+exCreditRemain+"');");
-            System.out.println("3c");
+
             System.out.println("3c");
         }
         else if (debitValue == 0 && creditValue != 0 && RemainDebit !=0 && RemainCredit != 0){

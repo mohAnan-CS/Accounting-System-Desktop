@@ -9,10 +9,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import model.CurrencyModel;
 import model.GeneralLedger;
 import model.GeneralLedgerModel;
 import model.TrialBalanceModel;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -38,7 +40,7 @@ public class TrialBalanceController implements Initializable {
         setAllCellValueFactory();
         try {
             fillLedgerList();
-        } catch (SQLException e) {
+        } catch (SQLException | IOException e) {
             e.printStackTrace();
         }
 
@@ -52,14 +54,36 @@ public class TrialBalanceController implements Initializable {
 
     }
 
-    private void fillLedgerList() throws SQLException {
+    private void fillLedgerList() throws SQLException, IOException {
 
         TrialBalanceModel trialBalanceModel = new TrialBalanceModel();
         GeneralLedgerModel generalLedgerModel = new GeneralLedgerModel();
         ObservableList<String> listAccount = generalLedgerModel.Accounts();
         ObservableList<TrialBalanceTableView> listTrialBalanceTableView = FXCollections.observableArrayList();
 
+//        CurrencyModel c = new CurrencyModel();
+//        String url = "https://currencies.apps.grandtrunk.net/getlatest/USD/"+c.currentCurrency;
+//        double currencyValue = Double.parseDouble( c.readFromWeb( url ) );
+
         for (int i = 0 ; i < listAccount.size() ; i++){
+//            String str;
+//            double amount=0;
+//
+//            if ( ( trialBalanceModel.getBalance(listAccount.get(i)) ).getCredit().isEmpty() ){
+//
+//                str = ( trialBalanceModel.getBalance(listAccount.get(i)) ).getDebit();
+//                amount = Double.parseDouble(str);
+//                amount = amount * currencyValue;
+//                trialBalanceModel.getBalance(listAccount.get(i)).setDebit(amount+"");
+//                System.out.println(amount);
+//            }
+//            else {
+//
+//               str = ( trialBalanceModel.getBalance(listAccount.get(i)) ).getCredit();
+//                amount = Double.parseDouble(str);
+//                amount = amount * currencyValue;
+//                trialBalanceModel.getBalance(listAccount.get(i)).setCredit(amount+"");
+//            }
 
             TrialBalanceTableView trialBalanceTableView = trialBalanceModel.getBalance(listAccount.get(i));
             listTrialBalanceTableView.add(trialBalanceTableView);

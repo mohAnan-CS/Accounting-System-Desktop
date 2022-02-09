@@ -5,7 +5,6 @@ import javafx.beans.property.SimpleStringProperty;
 
 public class User {
 
-
     private int id ;
     private String first , last , phone , address , salary  , permission ;
 

@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import sql.DataBaseConnection;
 
+import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -49,7 +50,9 @@ public class GeneralLedgerModel {
         return list;
     }
 
-    public ObservableList Search(String AccountName) throws SQLException {
+
+
+    public ObservableList Search(String AccountName) throws SQLException, IOException {
 
         double balance = 0;
         DataBaseConnection db = new DataBaseConnection();
@@ -110,7 +113,76 @@ public class GeneralLedgerModel {
     }
 
 
+    public String GetBalance(String AccountName) throws SQLException, IOException {
 
+        double balance=0,deb=0,cred=0;
+        DataBaseConnection db = new DataBaseConnection();
+        Statement stmt = db.getConn().createStatement();
+
+        ResultSet rse = stmt.executeQuery("SELECT accountType,accountName FROM account WHERE accountName = '"+AccountName+"';" );
+
+        String str="";
+        while (rse.next()) {
+
+
+            str = rse.getString("accountType");
+
+
+        }
+
+        ResultSet rs = stmt.executeQuery("select accountName, amount, typ from DebitCreditInfo  " + "where accountName = '" + AccountName + "';\n");
+
+        while (rs.next()) {
+
+            String accountName = rs.getString("accountName");
+            double amount = rs.getDouble("amount");
+            String typ = rs.getString("typ");
+
+            if (str.equalsIgnoreCase("assets") || str.equalsIgnoreCase("expenses")){
+                // d+  c-
+                if (typ.equalsIgnoreCase("debit")){
+                    balance+=amount;
+                    deb += amount;
+                }
+                else {
+                    balance-=amount;
+                    deb -= amount;
+                }
+            }
+            else {
+                if (typ.equalsIgnoreCase("debit")){
+                    balance-=amount;
+                    cred-=amount;
+                }
+                else {
+                    balance+=amount;
+                    cred+=amount;
+                }
+            }
+        }
+        String ans;
+        if (str.equalsIgnoreCase("assets") || str.equalsIgnoreCase("expenses")){
+            if (balance >= 0){
+                ans = "Debit";
+            }
+            else {
+                ans = "Credit";
+            }
+        }
+        else{
+            if (balance >= 0){
+                ans = "Credit";
+            }
+            else {
+                ans = "Debit";
+            }
+        }
+        System.out.println(cred);
+        System.out.println(deb);
+
+        return balance +" "+ans+" "+AccountName;
+
+        }
 
     public ObservableList Accounts() throws SQLException {
 
@@ -125,8 +197,6 @@ public class GeneralLedgerModel {
 
             str = rse.getString("accountName");
             list.add(str);
-
-
         }
         return list;
     }

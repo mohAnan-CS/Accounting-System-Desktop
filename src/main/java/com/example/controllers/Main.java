@@ -4,8 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import model.GeneralJournalModel;
-import model.GeneralLedgerModel;
+import model.*;
 
 import java.io.IOException;
 
@@ -30,11 +29,14 @@ public class Main extends Application {
 
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException, IOException {
 
-        launch();
-
-
+        CurrencyModel c = new CurrencyModel();
+        c.calc();
+       // launch();
+//        Currency c = new Currency();
+//        System.out.println(c.readFromWeb("https://currencies.apps.grandtrunk.net/getlatest/USD/KRW"));
+//        System.out.println( c.addCurrency("KRW") );
 
     }
 
