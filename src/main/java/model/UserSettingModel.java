@@ -57,7 +57,7 @@ public class UserSettingModel {
 
     public ObservableList searchUser(int userId) throws SQLException {
 
-        ObservableList<LoginTable> list = FXCollections.observableArrayList();
+        ObservableList<User> list = FXCollections.observableArrayList();
         DataBaseConnection db = new DataBaseConnection();
         Statement stmt = db.getConn().createStatement();
 
@@ -74,7 +74,7 @@ public class UserSettingModel {
             String add = rse.getString("Address");
             String phone = rse.getString("PhoneNum");
             String state =  rse.getString("User_state");
-            LoginTable l = new LoginTable(UserName,id,perm,salary,add,phone,state);
+            User l = new User(id,fname,lname,phone,add,salary,perm);
             list.add(l);
         }
         return list;

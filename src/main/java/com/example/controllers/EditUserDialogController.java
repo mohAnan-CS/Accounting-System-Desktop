@@ -1,20 +1,16 @@
 package com.example.controllers;
 
-import javafx.beans.Observable;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.DialogPane;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import model.User;
 import model.UserSettingModel;
-
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -50,6 +46,7 @@ public class EditUserDialogController implements Initializable {
         int userId = Integer.parseInt(textFieldUserId.getText().trim());
         UserSettingModel userSettingModel = new UserSettingModel();
         listUser = userSettingModel.searchUser(userId);
+        System.out.println(listUser.get(0).toString());
 
         UserSettingController.editUserConfirmStage.close();
         openNewStage("edit-user-view");
@@ -67,7 +64,5 @@ public class EditUserDialogController implements Initializable {
         editUserStage.show();
 
     }
-
-
 
 }

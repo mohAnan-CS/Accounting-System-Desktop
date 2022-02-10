@@ -1,6 +1,7 @@
 package com.example.controllers;
 
 import javafx.application.Application;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -33,9 +34,18 @@ public class Main extends Application {
 
         CurrencyModel c = new CurrencyModel();
         c.getCurrency();
-        launch();
 
+        AccountModel a = new AccountModel();
+       // a.addAccount("ss","sss",1223);
+
+//        UserSettingModel userSettingModel = new UserSettingModel();
+//        ObservableList list = userSettingModel.searchUser(2);
+//        System.out.println(list.get(0).toString());
+
+        launch();
     }
+
+
 
     
 }
