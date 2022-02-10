@@ -1,6 +1,8 @@
 package com.example.controllers;
 
+import com.example.controllers.TableViewClass.IncomeStateTableView;
 import javafx.application.Application;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -38,9 +40,15 @@ public class Main extends Application {
         AccountModel a = new AccountModel();
        // a.addAccount("ss","sss",1223);
 
-//        UserSettingModel userSettingModel = new UserSettingModel();
-//        ObservableList list = userSettingModel.searchUser(2);
-//        System.out.println(list.get(0).toString());
+
+        AccountModel accountModel = new AccountModel();
+        ObservableList<IncomeStateTableView> list = accountModel.fun();
+
+        for(int  i = 0  ; i < list.size() ; i++ ){
+
+            System.out.println(list.get(i).toString());
+
+        }
 
         launch();
     }

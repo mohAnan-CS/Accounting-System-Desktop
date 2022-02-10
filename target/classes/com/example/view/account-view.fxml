@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="474.0" prefWidth="754.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TableView fx:id="tableViewAccount" layoutX="153.0" layoutY="84.0" prefHeight="200.0" prefWidth="448.0">
+        <columns>
+          <TableColumn fx:id="refCell" prefWidth="86.40000915527344" text="Account ref" />
+            <TableColumn fx:id="typeCell" prefWidth="166.39996337890625" text="Account Type" />
+          <TableColumn fx:id="nameCell" prefWidth="195.20001220703125" text="Account Name" />
+        </columns>
+      </TableView>
+   </children>
+</Pane>

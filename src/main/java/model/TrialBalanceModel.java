@@ -2,7 +2,6 @@ package model;
 
 import com.example.controllers.TableViewClass.TrialBalanceTableView;
 import sql.DataBaseConnection;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;

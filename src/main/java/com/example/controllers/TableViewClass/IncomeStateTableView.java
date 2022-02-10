@@ -2,26 +2,34 @@ package com.example.controllers.TableViewClass;
 
 public class IncomeStateTableView {
 
-    private String expense , balance ;
+    private String name  , value ;
 
-    public IncomeStateTableView(String expenseAccount, String balance) {
-        this.expense = expenseAccount;
-        this.balance = balance;
+    public IncomeStateTableView(String name, String value) {
+        this.name = name;
+        this.value = value;
     }
 
-    public String getExpenseAccount() {
-        return expense;
+    public String getName() {
+        return name;
     }
 
-    public void setExpenseAccount(String expenseAccount) {
-        this.expense = expenseAccount;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getBalance() {
-        return balance;
+    public String getValue() {
+        return value;
     }
 
-    public void setBalance(String balance) {
-        this.balance = balance;
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    @Override
+    public String toString() {
+        return "IncomeStateTableView{" +
+                "name='" + name + '\'' +
+                ", value='" + value + '\'' +
+                '}';
     }
 }
