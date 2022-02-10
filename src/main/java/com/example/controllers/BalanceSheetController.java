@@ -32,6 +32,12 @@ public class BalanceSheetController implements Initializable {
     @FXML
     private Text textFieldSalary;
 
+    @FXML
+    private Text asset;
+
+    @FXML
+    private Text lib;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
@@ -57,12 +63,17 @@ public class BalanceSheetController implements Initializable {
         salary = balanceSheetModel.sumOf("Account recivble");
 
         textFieldCash.setText("Cash " + cash);
-        textFieldCash.setText("recivble " + recivble);
-        textFieldCash.setText("supplies " + supplies);
-        textFieldCash.setText("supplies " + supplies);
-        textFieldCash.setText("equipment " + equipment);
-        textFieldCash.setText("notePayable " + notePayable);
-        textFieldCash.setText("salary " + salary);
+        textFieldRecivble.setText("recivble " + recivble);
+        textFieldSalary.setText("Supplies =  " + supplies);
+        textFieldEqipment.setText("Equpment = " + equipment);
+        textFieldPayable.setText("Payable = " + payable);
+        textFieldNotePayable.setText("notePayable " + notePayable);
+        textFieldSalary.setText("salary " + salary);
+
+        asset.setText("Total Asset = " + (cash + recivble + supplies +equipment));
+        lib.setText("Total libelities = " + (payable + notePayable + salary));
+
+
 
 
 

@@ -18,18 +18,18 @@
             <Image url="@../../../Images/transfer.png" />
          </image>
       </ImageView>
-      <BorderPane layoutX="56.0" layoutY="28.0" prefHeight="530.0" prefWidth="720.0">
+      <BorderPane layoutX="56.0" layoutY="28.0" prefHeight="530.0" prefWidth="878.0">
          <top>
-            <Pane prefHeight="143.0" prefWidth="720.0" BorderPane.alignment="CENTER">
+            <Pane prefHeight="92.0" prefWidth="878.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button layoutX="251.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnAddingOneOnAction" prefHeight="47.0" prefWidth="219.0" style="-fx-background-radius: 20px;" text="Adding One (debit/credit)">
+                  <Button layoutX="210.0" layoutY="24.0" mnemonicParsing="false" onAction="#btnAddingOneOnAction" prefHeight="47.0" prefWidth="219.0" style="-fx-background-radius: 20px; -fx-background-color: #AEFEFF; -fx-border-radius: 20px; -fx-border-color: black;" text="Adding One (debit/credit)">
                      <font>
-                        <Font size="15.0" />
+                        <Font name="System Bold" size="15.0" />
                      </font>
                   </Button>
-                  <Button layoutX="251.0" layoutY="77.0" mnemonicParsing="false" onAction="#btnAddingTowOnAction" prefHeight="52.0" prefWidth="219.0" style="-fx-background-radius: 20px;" text="Adding Two (debit/credit)">
+                  <Button layoutX="516.0" layoutY="20.0" mnemonicParsing="false" onAction="#btnAddingTowOnAction" prefHeight="52.0" prefWidth="219.0" style="-fx-background-radius: 20px; -fx-background-color: #AEFEFF; -fx-border-color: black; -fx-border-radius: 20px;" text="Adding Two (debit/credit)">
                      <font>
-                        <Font size="15.0" />
+                        <Font name="System Bold" size="15.0" />
                      </font>
                   </Button>
                </children>
@@ -43,12 +43,12 @@
             </AnchorPane>
          </bottom>
       </BorderPane>
-      <Text layoutX="1172.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Setting Page" wrappingWidth="336.199951171875">
+      <Text layoutX="1172.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Transaction Page" wrappingWidth="336.199951171875">
          <font>
             <Font name="System Bold" size="40.0" />
          </font>
       </Text>
-      <Text layoutX="1251.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Editting user setting" wrappingWidth="178.984375">
+      <Text layoutX="1251.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Debit and credit" wrappingWidth="178.984375">
          <font>
             <Font size="20.0" />
          </font>

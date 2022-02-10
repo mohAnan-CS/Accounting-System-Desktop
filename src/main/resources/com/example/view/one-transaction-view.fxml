@@ -32,9 +32,9 @@
             </HBox>
             <HBox prefHeight="47.0" prefWidth="622.0" spacing="30.0">
                <children>
-                  <TextField fx:id="textFieldDebit" prefHeight="26.0" prefWidth="176.0" style="-fx-background-radius: 20px;" />
-                  <ComboBox fx:id="comboBoxDebit" prefHeight="26.0" prefWidth="140.0" style="-fx-background-radius: 20px;" />
-                  <TextArea fx:id="textAreaDescriptionDebit" prefHeight="43.0" prefWidth="242.0" />
+                  <TextField fx:id="textFieldDebit" prefHeight="26.0" prefWidth="176.0" promptText="Enter debit value" style="-fx-background-radius: 20px; -fx-border-color: black; -fx-border-radius: 20px;" />
+                  <ComboBox fx:id="comboBoxDebit" prefHeight="26.0" prefWidth="140.0" style="-fx-background-radius: 20px; -fx-background-color: #AEFEFF;" />
+                  <TextArea fx:id="textAreaDescriptionDebit" prefHeight="43.0" prefWidth="242.0" style="-fx-border-color: black;" />
                </children>
                <VBox.margin>
                   <Insets top="5.0" />
@@ -60,9 +60,9 @@
             </HBox>
             <HBox prefHeight="49.0" prefWidth="622.0" spacing="30.0">
                <children>
-                  <TextField fx:id="textFieldCredit" prefHeight="26.0" prefWidth="176.0" style="-fx-background-radius: 20px;" />
-                  <ComboBox fx:id="comboBoxCredit" prefHeight="26.0" prefWidth="140.0" style="-fx-background-radius: 20px;" />
-                  <TextArea fx:id="textAreaDescriptionCredit" prefHeight="93.0" prefWidth="242.0" />
+                  <TextField fx:id="textFieldCredit" prefHeight="26.0" prefWidth="176.0" promptText="Enter credit value" style="-fx-background-radius: 20px; -fx-border-color: black; -fx-border-radius: 20px;" />
+                  <ComboBox fx:id="comboBoxCredit" prefHeight="26.0" prefWidth="140.0" style="-fx-background-radius: 20px; -fx-background-color: #AEFEFF;" />
+                  <TextArea fx:id="textAreaDescriptionCredit" prefHeight="93.0" prefWidth="242.0" style="-fx-border-color: black;" />
                </children>
                <VBox.margin>
                   <Insets top="10.0" />
@@ -70,11 +70,9 @@
             </HBox>
          </children>
       </VBox>
-      <Button layoutX="256.0" layoutY="332.0" mnemonicParsing="false" onAction="#btnSubmitOneTransactionOnAction" prefHeight="36.0" prefWidth="209.0" style="-fx-background-radius: 20px;" text="Submit" />
-      <Text layoutX="560.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Today date : 2/2/2022">
+      <Button layoutX="256.0" layoutY="332.0" mnemonicParsing="false" onAction="#btnSubmitOneTransactionOnAction" prefHeight="36.0" prefWidth="209.0" style="-fx-background-radius: 20px; -fx-background-color: #AEFEFF; -fx-border-radius: 20px; -fx-border-color: black;" text="Submit">
          <font>
             <Font name="System Bold" size="12.0" />
-         </font>
-      </Text>
+         </font></Button>
    </children>
 </Pane>

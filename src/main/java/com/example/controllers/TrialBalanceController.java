@@ -71,8 +71,10 @@ public class TrialBalanceController implements Initializable {
         CurrencyModel c = new CurrencyModel();
         System.out.println(c.getArr());
         double ans =  c.currencyArr.get(c.getArr()).getCurrencyValue();
+        double num1 = 0, num2 =0;
         for (int i = 0 ; i < listAccount.size() ; i++) {
                 int flag1=0,flag2=0;
+
 
             if (c.checkNumber(trialBalanceModel.getBalance(listAccount.get(i)).getDebit()) ){
 
@@ -89,6 +91,7 @@ public class TrialBalanceController implements Initializable {
                     if (flag1 == 1 ) {
                         double ansDebit = Double.parseDouble(trialBalanceTableView.getDebit());
                         double balance1 = ansDebit * ans;
+                        num1 = num1 + balance1 ;
                         trialBalanceTableView.setDebit(balance1 + "");
 
                     }
@@ -97,6 +100,7 @@ public class TrialBalanceController implements Initializable {
                         double ansCredit = Double.parseDouble(trialBalanceTableView.getCredit());
                         double balance = ansCredit * ans;
                         trialBalanceTableView.setCredit(balance + ".");
+                        num2 = num2 + balance ;
 
                     }
         }
@@ -106,6 +110,8 @@ public class TrialBalanceController implements Initializable {
         }
 
         tableViewTrialBalance.setItems(listTrialBalanceTableView);
+        textFieldDebit.setText(String.valueOf(num1));
+        textFieldCredit.setText(String.valueOf(num2));
     }
 
 }

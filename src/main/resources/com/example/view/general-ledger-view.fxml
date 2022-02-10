@@ -23,7 +23,7 @@
             <VBox fx:id="vboxButton" alignment="TOP_CENTER" prefHeight="488.0" prefWidth="142.0" spacing="35.0" style="-fx-background-color: #DFDFDF;" />
          </content>
       </ScrollPane>
-      <Text fx:id="textTypeAccount" layoutX="355.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Debreassion expness" wrappingWidth="299.2000732421875">
+      <Text fx:id="textTypeAccount" layoutX="352.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Debreassion expness" wrappingWidth="435.20001220703125">
          <font>
             <Font name="System Bold Italic" size="30.0" />
          </font>
@@ -39,12 +39,12 @@
             <TableColumn fx:id="balanceCell" prefWidth="102.39996337890625" text="Balance" />
         </columns>
       </TableView>
-      <Text layoutX="1172.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Setting Page" wrappingWidth="336.199951171875">
+      <Text layoutX="1196.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="General ledger " wrappingWidth="336.199951171875">
          <font>
             <Font name="System Bold" size="40.0" />
          </font>
       </Text>
-      <Text layoutX="1251.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Editting user setting" wrappingWidth="178.984375">
+      <Text layoutX="1251.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="General ledger" wrappingWidth="178.984375">
          <font>
             <Font size="20.0" />
          </font>

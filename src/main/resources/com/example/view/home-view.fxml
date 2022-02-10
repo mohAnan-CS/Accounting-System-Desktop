@@ -18,7 +18,7 @@
          <children>
             <HBox layoutX="31.0" layoutY="18.0" prefHeight="60.0" prefWidth="1475.0" spacing="50.0">
                <children>
-                  <Button fx:id="btnTransaction" mnemonicParsing="false" onAction="#btnTransactionOnAction" prefHeight="58.0" prefWidth="172.0" style="-fx-background-radius: 20px;" text="Transaction">
+                  <Button fx:id="btnTransaction" mnemonicParsing="false" onAction="#btnTransactionOnAction" prefHeight="58.0" prefWidth="172.0" style="-fx-background-radius: 20px; -fx-background-color: #4FBDBA; -fx-border-radius: 20px; -fx-border-color: black;" text="Transaction">
                      <graphic>
                         <ImageView fitHeight="34.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -26,8 +26,11 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#btnFinancialOnAction" prefHeight="58.0" prefWidth="172.0" style="-fx-background-radius: 20px;" text="Financial statements">
+                  <Button mnemonicParsing="false" onAction="#btnFinancialOnAction" prefHeight="58.0" prefWidth="182.0" style="-fx-background-radius: 20px; -fx-background-color: #4FBDBA; -fx-border-radius: 20px; -fx-border-color: black;" text="Financial statements">
                      <graphic>
                         <ImageView fitHeight="34.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -35,8 +38,11 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#btnTrialBalanceOnAction" prefHeight="58.0" prefWidth="172.0" style="-fx-background-radius: 20px;" text="Trial balance">
+                  <Button mnemonicParsing="false" onAction="#btnTrialBalanceOnAction" prefHeight="58.0" prefWidth="172.0" style="-fx-background-radius: 20px; -fx-border-color: black; -fx-background-color: #4FBDBA; -fx-border-radius: 20px;" text="Trial balance">
                      <graphic>
                         <ImageView fitHeight="34.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -44,8 +50,11 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#btnGeneralLedgerOnAction" prefHeight="58.0" prefWidth="172.0" style="-fx-background-radius: 20px;" text="General ledger">
+                  <Button mnemonicParsing="false" onAction="#btnGeneralLedgerOnAction" prefHeight="58.0" prefWidth="172.0" style="-fx-background-radius: 20px; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-color: #4FBDBA;" text="General ledger">
                      <graphic>
                         <ImageView fitHeight="34.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -53,8 +62,11 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#btnGeneralJournalOnAction" prefHeight="56.0" prefWidth="172.0" style="-fx-background-radius: 20px;" text="General journal">
+                  <Button mnemonicParsing="false" onAction="#btnGeneralJournalOnAction" prefHeight="56.0" prefWidth="172.0" style="-fx-background-radius: 20px; -fx-border-radius: 20px; -fx-border-color: black; -fx-background-color: #4FBDBA;" text="General journal">
                      <graphic>
                         <ImageView fitHeight="34.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -62,8 +74,11 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#btnSettingsOnAction" prefHeight="58.0" prefWidth="172.0" style="-fx-background-radius: 20px;" text="Settings">
+                  <Button mnemonicParsing="false" onAction="#btnSettingsOnAction" prefHeight="58.0" prefWidth="172.0" style="-fx-background-radius: 20px; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-color: #4FBDBA;" text="Settings">
                      <graphic>
                         <ImageView fitHeight="34.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -71,8 +86,11 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
                   </Button>
-                  <Button fx:id="btnUserSetting" mnemonicParsing="false" onAction="#btnUserSettingsOnAction" prefHeight="58.0" prefWidth="172.0" style="-fx-background-radius: 20px;" text="User Setting">
+                  <Button fx:id="btnUserSetting" mnemonicParsing="false" onAction="#btnUserSettingsOnAction" prefHeight="58.0" prefWidth="172.0" style="-fx-background-radius: 20px; -fx-background-color: #4FBDBA; -fx-border-color: black; -fx-border-radius: 20px;" text="User Setting">
                      <graphic>
                         <ImageView fitHeight="34.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -80,6 +98,9 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
                   </Button>
                </children>
             </HBox>
@@ -89,12 +110,12 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <StackPane fx:id="stackPane" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <StackPane fx:id="stackPane" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #DFDFDF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
          </children>
       </AnchorPane>
    </center>
    <top>
-      <AnchorPane prefHeight="75.0" prefWidth="1534.0" style="-fx-background-color: #DFDFDF;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="75.0" prefWidth="1534.0" style="-fx-background-color: #AEFEFF;" BorderPane.alignment="CENTER">
          <children>
             <Text fx:id="textTime" layoutX="701.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="130.40478515625">
                <font>
@@ -113,7 +134,7 @@
                   </ImageView>
                   <Text fx:id="textUserName" strokeType="OUTSIDE" strokeWidth="0.0" text="Mohammed Anan ( Manager )">
                      <font>
-                        <Font size="16.0" />
+                        <Font name="System Bold" size="16.0" />
                      </font>
                      <HBox.margin>
                         <Insets bottom="5.0" top="10.0" />
@@ -121,7 +142,7 @@
                   </Text>
                </children>
             </HBox>
-            <Button layoutX="1375.0" layoutY="9.0" mnemonicParsing="false" onAction="#btnLogoutOnAction" prefHeight="42.0" prefWidth="124.0" style="-fx-background-radius: 20px;" text="   Log out">
+            <Button layoutX="1375.0" layoutY="9.0" mnemonicParsing="false" onAction="#btnLogoutOnAction" prefHeight="42.0" prefWidth="124.0" style="-fx-background-radius: 20px; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-color: #A1A1A1;" text="   Log out" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="28.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -129,6 +150,9 @@
                      </image>
                   </ImageView>
                </graphic>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
             </Button>
          </children>
       </AnchorPane>

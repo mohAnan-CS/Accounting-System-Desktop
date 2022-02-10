@@ -39,7 +39,7 @@
             <Font size="21.0" />
          </font>
       </Text>
-      <Text layoutX="502.0" layoutY="518.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1500" />
-      <Text layoutX="658.0" layoutY="518.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1700" />
+      <Text fx:id="textFieldDebit" layoutX="502.0" layoutY="518.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1500" />
+      <Text fx:id="textFieldCredit" layoutX="658.0" layoutY="518.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1700" />
    </children>
 </Pane>

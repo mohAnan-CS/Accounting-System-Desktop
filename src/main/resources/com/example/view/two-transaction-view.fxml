@@ -22,12 +22,12 @@
             </Text>
             <HBox prefHeight="26.0" prefWidth="200.0" spacing="30.0">
                <children>
-                  <TextField fx:id="textFieldDebit2" prefHeight="26.0" prefWidth="191.0" promptText="Enter your debit" style="-fx-background-radius: 20px;" />
-                  <ComboBox fx:id="comboBoxDebit2" prefHeight="26.0" prefWidth="114.0">
+                  <TextField fx:id="textFieldDebit2" prefHeight="26.0" prefWidth="191.0" promptText="Enter your debit" style="-fx-background-radius: 20px; -fx-border-color: black; -fx-border-radius: 20px;" />
+                  <ComboBox fx:id="comboBoxDebit2" prefHeight="26.0" prefWidth="110.0" style="-fx-background-radius: 20px; -fx-background-color: #AEFEFF;">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin></ComboBox>
-                  <TextArea fx:id="textAreaDesDebit" prefHeight="200.0" prefWidth="200.0" />
+                  <TextArea fx:id="textAreaDesDebit" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black;" />
                </children>
                <VBox.margin>
                   <Insets top="5.0" />
@@ -35,9 +35,9 @@
             </HBox>
             <HBox prefHeight="26.0" prefWidth="200.0" spacing="30.0">
                <children>
-                  <TextField fx:id="textFieldRemainDebit2" prefHeight="26.0" prefWidth="176.0" promptText="Enter your debit" style="-fx-background-radius: 20px;" />
-                  <ComboBox fx:id="comboBoxRemainDebit2" prefHeight="26.0" prefWidth="123.0" />
-                  <TextArea fx:id="textAreaDesRemainDebit" prefHeight="200.0" prefWidth="200.0" />
+                  <TextField fx:id="textFieldRemainDebit2" prefHeight="26.0" prefWidth="187.0" promptText="Enter your debit" style="-fx-background-radius: 20px; -fx-border-radius: 20px; -fx-border-color: black;" />
+                  <ComboBox fx:id="comboBoxRemainDebit2" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #AEFEFF; -fx-background-radius: 20px;" />
+                  <TextArea fx:id="textAreaDesRemainDebit" prefHeight="39.0" prefWidth="205.0" style="-fx-border-color: black;" />
                </children>
                <VBox.margin>
                   <Insets top="20.0" />
@@ -50,13 +50,13 @@
             </Text>
             <HBox prefHeight="26.0" prefWidth="200.0" spacing="30.0">
                <children>
-                  <TextField fx:id="textFieldCredit2" prefHeight="26.0" prefWidth="190.0" promptText="Enter your credit" style="-fx-background-radius: 20px;">
+                  <TextField fx:id="textFieldCredit2" prefHeight="26.0" prefWidth="178.0" promptText="Enter your credit" style="-fx-background-radius: 20px; -fx-border-color: black; -fx-border-radius: 20px;">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
                   </TextField>
-                  <ComboBox fx:id="comboBoxCredit2" prefHeight="26.0" prefWidth="114.0" />
-                  <TextArea fx:id="textAreaDesCredit" prefHeight="200.0" prefWidth="200.0" />
+                  <ComboBox fx:id="comboBoxCredit2" prefHeight="26.0" prefWidth="96.0" style="-fx-background-color: #AEFEFF; -fx-background-radius: 20px;" />
+                  <TextArea fx:id="textAreaDesCredit" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black;" />
                </children>
                <VBox.margin>
                   <Insets top="5.0" />
@@ -64,9 +64,9 @@
             </HBox>
             <HBox prefHeight="26.0" prefWidth="200.0" spacing="30.0">
                <children>
-                  <TextField fx:id="textFieldRemainCredit2" prefHeight="26.0" prefWidth="176.0" promptText="Enter your credit" style="-fx-background-radius: 20px;" />
-                  <ComboBox fx:id="comboBoxRemainCredit2" prefHeight="26.0" prefWidth="99.0" />
-                  <TextArea fx:id="textAreaDesRemainCredit" prefHeight="39.0" prefWidth="227.0" />
+                  <TextField fx:id="textFieldRemainCredit2" prefHeight="26.0" prefWidth="195.0" promptText="Enter your credit" style="-fx-background-radius: 20px; -fx-border-color: black; -fx-border-radius: 20px;" />
+                  <ComboBox fx:id="comboBoxRemainCredit2" prefHeight="26.0" prefWidth="122.0" style="-fx-background-color: #AEFEFF; -fx-background-radius: 20px;" />
+                  <TextArea fx:id="textAreaDesRemainCredit" prefHeight="39.0" prefWidth="227.0" style="-fx-border-color: black;" />
                </children>
                <VBox.margin>
                   <Insets top="20.0" />
@@ -74,11 +74,9 @@
             </HBox>
          </children>
       </VBox>
-      <Button layoutX="283.0" layoutY="340.0" mnemonicParsing="false" onAction="#btnSubmitOnAction" prefHeight="36.0" prefWidth="114.0" style="-fx-background-radius: 20px;" text="Submit" />
-      <Text layoutX="335.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Today date : 2/2/2022">
+      <Button layoutX="283.0" layoutY="340.0" mnemonicParsing="false" onAction="#btnSubmitOnAction" prefHeight="36.0" prefWidth="191.0" style="-fx-background-radius: 20px; -fx-background-color: #AEFEFF; -fx-border-color: black; -fx-border-radius: 20px;" text="Submit">
          <font>
             <Font name="System Bold" size="12.0" />
-         </font>
-      </Text>
+         </font></Button>
    </children>
 </Pane>

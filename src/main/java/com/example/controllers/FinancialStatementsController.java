@@ -47,5 +47,4 @@ public class FinancialStatementsController implements Initializable {
         }
         stackPaneFinancial.getChildren().addAll(fxml);
 
-    }
-}
+    }2
