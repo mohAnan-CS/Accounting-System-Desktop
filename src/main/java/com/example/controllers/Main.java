@@ -31,9 +31,14 @@ public class Main extends Application {
 
     public static void main(String[] args) throws SQLException, IOException {
 
+        CurrencyModel c = new CurrencyModel();
+        c.getCurrency();
+        AccountModel a = new AccountModel();
+       // a.addAccount("ss","sss",1223);
         launch();
-
     }
+
+
 
     
 }
