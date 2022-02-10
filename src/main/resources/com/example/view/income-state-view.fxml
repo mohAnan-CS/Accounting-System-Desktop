@@ -9,31 +9,31 @@
 <?import javafx.scene.text.Text?>
 
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="453.0" prefWidth="955.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="453.0" prefWidth="955.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.IncomeStateController">
    <children>
-      <Text layoutX="129.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Revinue = 1400 $">
+      <Text fx:id="textFieldTotalRevenue" layoutX="129.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Revinue = 1400 $">
          <font>
             <Font name="System Bold" size="21.0" />
          </font>
       </Text>
-      <TableView layoutX="55.0" layoutY="93.0" prefHeight="324.0" prefWidth="320.0">
+      <TableView fx:id="tableViewTotalRevenue" layoutX="55.0" layoutY="93.0" prefHeight="324.0" prefWidth="320.0">
         <columns>
-          <TableColumn prefWidth="180.7999725341797" text="Expenss Account" />
-          <TableColumn prefWidth="139.20001220703125" text="Balance" />
+          <TableColumn fx:id="expensesCell" prefWidth="180.7999725341797" text="Expenss Account" />
+          <TableColumn fx:id="balanceCell" prefWidth="139.20001220703125" text="Balance" />
         </columns>
       </TableView>
-      <Text layoutX="515.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Operating Balance = 4600 $">
+      <Text fx:id="textFieldTotalBalance" layoutX="515.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Operating Balance = 4600 $">
          <font>
             <Font size="19.0" />
          </font>
       </Text>
       <Line endX="100.0" endY="122.19998168945312" layoutX="340.0" layoutY="309.0" opacity="0.32" startX="100.0" startY="-258.6000061035156" />
-      <Text layoutX="515.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Operating Income = 2400 $">
+      <Text fx:id="textFieldOperatingIncome" layoutX="515.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Operating Income = 2400 $">
          <font>
             <Font size="19.0" />
          </font>
       </Text>
-      <Button layoutX="506.0" layoutY="252.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="94.0" style="-fx-background-radius: 20px;" text="Print Report" />
+      <Button layoutX="506.0" layoutY="252.0" mnemonicParsing="false" onAction="#btnShowReportOnAction" prefHeight="28.0" prefWidth="94.0" style="-fx-background-radius: 20px;" text="Print Report" />
       <Button layoutX="640.0" layoutY="252.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="94.0" style="-fx-background-radius: 20px;" text="Export file" />
       <Button layoutX="770.0" layoutY="252.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="94.0" style="-fx-background-radius: 20px;" text="Export PDF" />
    </children>

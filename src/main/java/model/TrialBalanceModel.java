@@ -20,9 +20,7 @@ public class TrialBalanceModel {
         String str = "";
         while (rse.next()) {
 
-
             str = rse.getString("accountType");
-
 
         }
 

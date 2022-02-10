@@ -31,15 +31,7 @@ public class Main extends Application {
 
     public static void main(String[] args) throws SQLException, IOException {
 
-        CurrencyModel c = new CurrencyModel();
-       c.getCurrency();
-      //  System.out.println(c.checkNumber("-7200"));
         launch();
-
-
-        //System.out.println(c.getArr());
-//        System.out.println(c.readFromWeb("https://currencies.apps.grandtrunk.net/getlatest/USD/KRW"));
-//        System.out.println( c.addCurrency("KRW") );
 
     }
 

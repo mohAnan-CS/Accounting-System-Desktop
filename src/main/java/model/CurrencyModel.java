@@ -95,7 +95,7 @@ public class CurrencyModel {
         ArrayList<Double> arrBalance = new ArrayList<Double>();
 
         for (int i=0;i<accountArr.size();i++){
-             rse = stmt.executeQuery("SELECT accountName,amount FROM DebitCreditInfo WHERE accountName = '" + accountArr.get(i) + "';");
+            rse = stmt.executeQuery("SELECT accountName,amount FROM DebitCreditInfo WHERE accountName = '" + accountArr.get(i) + "';");
             String str = "";
             double balance=0;
             while (rse.next()) {
