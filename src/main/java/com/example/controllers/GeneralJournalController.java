@@ -8,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import model.CurrencyModel;
 import model.GeneralJournal;
 import model.GeneralJournalModel;
 
@@ -96,6 +97,12 @@ public class GeneralJournalController implements Initializable {
                 System.out.println("-------------------------");
 
             }
+
+            double balance=lisGeneralJournal.get(i).getValue();
+            CurrencyModel c = new CurrencyModel();
+
+            double ans =  c.currencyArr.get(c.getArr()).getCurrencyValue();
+            lisGeneralJournal.get(i).setValue( balance * ans );
 
             //System.out.println(lisGeneralJournal.get(i).toString());
             System.out.println(lisGeneralJournal.get(i).getType());

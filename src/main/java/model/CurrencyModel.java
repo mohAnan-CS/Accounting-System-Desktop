@@ -15,10 +15,20 @@ import java.util.ArrayList;
 
 public class CurrencyModel {
 
-    public String currentCurrency = "EUR";
+    static public String currentCurrency = "ILS";
+    static public ArrayList<Currency> currencyArr = new ArrayList<Currency>();
+    public int getArr(){
 
+        for (int i=0;i<currencyArr.size();i++){
 
-    ArrayList<Currency> currencyArr = new ArrayList<Currency>();
+            if (currentCurrency.equalsIgnoreCase(currencyArr.get(i).getCurrencyType())){
+                return i;
+            }
+        }
+        return 0;
+
+    }
+
 
     public void getCurrency() throws SQLException, IOException {
 
@@ -36,6 +46,7 @@ public class CurrencyModel {
             Currency c = new Currency(currency_type,currValue);
             currencyArr.add(c);
         }
+        System.out.println(currencyArr.size());
         for (int i=0;i<currencyArr.size();i++){
             System.out.println(currencyArr.get(i));
         }
@@ -50,7 +61,9 @@ public class CurrencyModel {
             return false;
         }
         try {
+
             double d = Double.parseDouble(Num);
+
         } catch (NumberFormatException nfe) {
             return false;
         }
@@ -97,7 +110,7 @@ public class CurrencyModel {
 
 
         }
-        //System.out.println(arrStr.get(0));
+
         double rev=0;
         rse = stmt.executeQuery("select sum(amount) from account a,DebitCreditInfo d where a.accountName = d.accountName and accountType = 'revinue';");
         while (rse.next()) {

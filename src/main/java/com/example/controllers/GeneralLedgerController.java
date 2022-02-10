@@ -104,9 +104,9 @@ public class GeneralLedgerController implements Initializable {
 
                 double balance=lisLedger.get(i).getBalance();
                 CurrencyModel c = new CurrencyModel();
-                String url = "https://currencies.apps.grandtrunk.net/getlatest/USD/"+c.currentCurrency;
-                double currencyValue = Double.parseDouble( c.readFromWeb( url ) );
-                lisLedger.get(i).setBalance( balance * currencyValue );
+
+               double ans =  c.currencyArr.get(c.getArr()).getCurrencyValue();
+                lisLedger.get(i).setBalance( balance * ans );
 
                 GeneralLedgerTableView generalLedgerTableView =
                         new GeneralLedgerTableView(lisLedger.get(i).getDate(),
