@@ -23,7 +23,6 @@ public class FinancialStatementsController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
 
-
     }
 
     @FXML
@@ -32,19 +31,19 @@ public class FinancialStatementsController implements Initializable {
     }
 
     @FXML
-    void btnIncomeStatementsOnAction( ) throws IOException{
+    void btnIncomeStatementsOnAction() throws IOException {
         switchPane("income-state-view");
     }
-
 
 
     private void switchPane(String xmlFileName) throws IOException {
 
         stackPaneFinancial.getChildren().removeAll();
-        Parent fxml = FXMLLoader.load(getClass().getResource("/com/example/view/"+xmlFileName.concat(".fxml")));
-        if (stackPaneFinancial.getChildren().size() != 0 ) {
+        Parent fxml = FXMLLoader.load(getClass().getResource("/com/example/view/" + xmlFileName.concat(".fxml")));
+        if (stackPaneFinancial.getChildren().size() != 0) {
             stackPaneFinancial.getChildren().removeAll(stackPaneFinancial.getChildren().get(0));
         }
         stackPaneFinancial.getChildren().addAll(fxml);
 
-    }2
+    }
+}
