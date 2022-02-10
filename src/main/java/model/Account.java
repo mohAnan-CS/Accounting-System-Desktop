@@ -2,21 +2,21 @@ package model;
 
 public class Account {
     int ref;
-    String accountName;
-    String accountType;
+    String name;
+    String type;
 
-    public Account(int ref, String accountName, String accountType) {
+    public Account(int ref, String name, String type) {
         this.ref = ref;
-        this.accountName = accountName;
-        this.accountType = accountType;
+        this.name = name;
+        this.type = type;
     }
 
     @Override
     public String toString() {
         return "Account{" +
                 "ref=" + ref +
-                ", accountName='" + accountName + '\'' +
-                ", accountType='" + accountType + '\'' +
+                ", accountName='" + name + '\'' +
+                ", accountType='" + type + '\'' +
                 '}';
     }
 
@@ -28,19 +28,19 @@ public class Account {
         this.ref = ref;
     }
 
-    public String getAccountName() {
-        return accountName;
+    public String getName() {
+        return name;
     }
 
-    public void setAccountName(String accountName) {
-        this.accountName = accountName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getAccountType() {
-        return accountType;
+    public String getType() {
+        return type;
     }
 
-    public void setAccountType(String accountType) {
-        this.accountType = accountType;
+    public void setType(String type) {
+        this.type = type;
     }
 }

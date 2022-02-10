@@ -1,5 +1,7 @@
 package model;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import sql.DataBaseConnection;
 
 import java.io.BufferedReader;
@@ -16,7 +18,7 @@ import java.util.ArrayList;
 public class CurrencyModel {
 
     static public String currentCurrency = "ILS";
-    static public ArrayList<Currency> currencyArr = new ArrayList<Currency>();
+    static public ObservableList<Currency> currencyArr = FXCollections.observableArrayList();
     public int getArr(){
 
         for (int i=0;i<currencyArr.size();i++){
@@ -50,6 +52,8 @@ public class CurrencyModel {
         for (int i=0;i<currencyArr.size();i++){
             System.out.println(currencyArr.get(i));
         }
+
+
 
 
     }

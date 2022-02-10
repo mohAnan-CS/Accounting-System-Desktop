@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.text.Text;
 import model.CurrencyModel;
 import model.GeneralLedger;
 import model.GeneralLedgerModel;
@@ -32,6 +33,12 @@ public class TrialBalanceController implements Initializable {
 
     @FXML
     private TableColumn<TrialBalanceTableView, String> creditCell;
+
+    @FXML
+    private Text textFieldDebit;
+
+    @FXML
+    private Text textFieldCredit;
 
 
     @Override

@@ -5,13 +5,13 @@
 <?import javafx.scene.layout.Pane?>
 
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="474.0" prefWidth="754.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="474.0" prefWidth="754.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.AccountController">
    <children>
-      <TableView fx:id="tableViewAccount" layoutX="153.0" layoutY="84.0" prefHeight="200.0" prefWidth="448.0">
+      <TableView fx:id="tableView" layoutX="269.0" layoutY="123.0" prefHeight="200.0" prefWidth="282.0">
         <columns>
-          <TableColumn fx:id="refCell" prefWidth="86.40000915527344" text="Account ref" />
-            <TableColumn fx:id="typeCell" prefWidth="166.39996337890625" text="Account Type" />
-          <TableColumn fx:id="nameCell" prefWidth="195.20001220703125" text="Account Name" />
+          <TableColumn fx:id="refCell" prefWidth="75.0" text="Ref" />
+          <TableColumn fx:id="nameCell" prefWidth="75.0" text="Name" />
+            <TableColumn fx:id="typeCell" prefWidth="130.79998779296875" text="Type" />
         </columns>
       </TableView>
    </children>

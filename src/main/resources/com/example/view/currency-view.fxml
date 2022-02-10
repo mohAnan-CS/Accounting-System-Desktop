@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.controllers.CurrencyController"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="474.0" prefWidth="754.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.CurrencyController">
+   <children>
+      <ComboBox fx:id="comboBoxCurrency" layoutX="302.0" layoutY="225.0" prefWidth="150.0" />
+      <Text layoutX="235.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Currnecy" />
+      <TextField fx:id="textFieldCurrency" layoutX="303.0" layoutY="132.0" promptText="Enter name of currency" />
+      <Text layoutX="235.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Currency" />
+      <Button layoutX="489.0" layoutY="132.0" mnemonicParsing="false" onAction="#btnCurrencyOnAction" text="Add Curency" />
+      <Button layoutX="489.0" layoutY="225.0" mnemonicParsing="false" onAction="#btnChangeOnAction" prefHeight="25.0" prefWidth="115.0" text="Change Currency" />
+   </children>
+</Pane>

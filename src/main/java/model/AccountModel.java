@@ -1,5 +1,6 @@
 package model;
 
+import com.example.controllers.TableViewClass.AccountTableView;
 import com.example.controllers.TableViewClass.IncomeStateTableView;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -37,6 +38,30 @@ public class AccountModel {
 
 
         return list;
+    }
+
+    public ObservableList getAccounts() throws SQLException {
+
+        DataBaseConnection db = new DataBaseConnection();
+        Statement stmt = db.getConn().createStatement();
+        ResultSet rs = stmt.executeQuery("select accountRef,accountName,accountType from account;");
+        ObservableList<Account> list = FXCollections.observableArrayList();
+
+        int i = 0 ;
+        while (rs.next()) {
+            int ref = rs.getInt("accountRef");
+            String accountName = rs.getString("accountName");
+            String accountType = rs.getString("accountType");
+            Account a = new Account(ref, accountType, accountName);
+
+            list.add(a);
+            System.out.println(list.get(i).toString());
+            i++;
+        }
+
+        return list;
+
+
     }
 
     public ObservableList<IncomeStateTableView> fun() throws SQLException {

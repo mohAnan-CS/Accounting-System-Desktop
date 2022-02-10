@@ -30,7 +30,6 @@ public class SettingsController {
             stackPaneSetting.getChildren().removeAll(stackPaneSetting.getChildren().get(0));
         }
         stackPaneSetting.getChildren().addAll(fxml);
-
     }
 
 }
