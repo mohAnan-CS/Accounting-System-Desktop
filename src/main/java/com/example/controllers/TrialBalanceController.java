@@ -61,31 +61,39 @@ public class TrialBalanceController implements Initializable {
         ObservableList<String> listAccount = generalLedgerModel.Accounts();
         ObservableList<TrialBalanceTableView> listTrialBalanceTableView = FXCollections.observableArrayList();
 
-//        CurrencyModel c = new CurrencyModel();
-//        String url = "https://currencies.apps.grandtrunk.net/getlatest/USD/"+c.currentCurrency;
-//        double currencyValue = Double.parseDouble( c.readFromWeb( url ) );
+        CurrencyModel c = new CurrencyModel();
+        System.out.println(c.getArr());
+        double ans =  c.currencyArr.get(c.getArr()).getCurrencyValue();
+        for (int i = 0 ; i < listAccount.size() ; i++) {
+                int flag1=0,flag2=0;
 
-        for (int i = 0 ; i < listAccount.size() ; i++){
-//            String str;
-//            double amount=0;
-//
-//            if ( ( trialBalanceModel.getBalance(listAccount.get(i)) ).getCredit().isEmpty() ){
-//
-//                str = ( trialBalanceModel.getBalance(listAccount.get(i)) ).getDebit();
-//                amount = Double.parseDouble(str);
-//                amount = amount * currencyValue;
-//                trialBalanceModel.getBalance(listAccount.get(i)).setDebit(amount+"");
-//                System.out.println(amount);
-//            }
-//            else {
-//
-//               str = ( trialBalanceModel.getBalance(listAccount.get(i)) ).getCredit();
-//                amount = Double.parseDouble(str);
-//                amount = amount * currencyValue;
-//                trialBalanceModel.getBalance(listAccount.get(i)).setCredit(amount+"");
-//            }
+            if (c.checkNumber(trialBalanceModel.getBalance(listAccount.get(i)).getDebit()) ){
 
+                flag1=1;
+            }
+            if (c.checkNumber(trialBalanceModel.getBalance(listAccount.get(i)).getCredit()) ){
+
+                flag2=1;
+            }
             TrialBalanceTableView trialBalanceTableView = trialBalanceModel.getBalance(listAccount.get(i));
+            if ( flag1 == 1 || flag2 == 1 ) {
+
+
+                    if (flag1 == 1 ) {
+                        double ansDebit = Double.parseDouble(trialBalanceTableView.getDebit());
+                        double balance1 = ansDebit * ans;
+                        trialBalanceTableView.setDebit(balance1 + "");
+
+                    }
+
+                    if (flag2 == 1) {
+                        double ansCredit = Double.parseDouble(trialBalanceTableView.getCredit());
+                        double balance = ansCredit * ans;
+                        trialBalanceTableView.setCredit(balance + ".");
+
+                    }
+        }
+            
             listTrialBalanceTableView.add(trialBalanceTableView);
 
         }
