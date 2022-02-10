@@ -30,7 +30,7 @@
          </image>
       </ImageView>
       <Line endX="-100.0" endY="352.5999755859375" layoutX="1217.0" layoutY="202.0" startX="-100.0" startY="-135.0" strokeWidth="3.0" />
-      <HBox layoutX="323.0" layoutY="40.0" prefHeight="39.0" prefWidth="545.0" spacing="80.0">
+      <HBox layoutX="494.0" layoutY="46.0" prefHeight="39.0" prefWidth="545.0" spacing="80.0">
          <children>
             <Button mnemonicParsing="false" onAction="#btnAddNewUserOnAction" style="-fx-background-radius: 20px;" text="Add new user">
                <font>
@@ -38,11 +38,6 @@
                </font>
             </Button>
             <Button mnemonicParsing="false" onAction="#btnEditUserOnAction" prefHeight="38.0" prefWidth="125.0" style="-fx-background-radius: 20px;" text="Edit user">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Button>
-            <Button mnemonicParsing="false" onAction="#btnDeleteUserOnAction" prefHeight="37.0" prefWidth="139.0" style="-fx-background-radius: 20px;" text="Delete user">
                <font>
                   <Font size="16.0" />
                </font>

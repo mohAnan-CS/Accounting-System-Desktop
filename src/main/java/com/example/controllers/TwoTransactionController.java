@@ -331,6 +331,23 @@ public class TwoTransactionController implements Initializable {
             showAlert("Error", "ERROR", sqlException.getMessage());
         }
 
+        textAreaDesRemainDebit.setText("");
+        textFieldRemainCredit2.setText("");
+        textAreaDesCredit.setText("");
+        textAreaDesDebit.setText("");
+        textFieldCredit2.setText("");
+        textFieldDebit2.setText("");
+        textFieldRemainDebit2.setText("");
+        textFieldRemainCredit2.setText("");
+        textAreaDesRemainDebit.setText("");
+        textAreaDesRemainCredit.setText("");
+        comboBoxDebit2.setValue(null);
+        comboBoxCredit2.setValue(null);
+        comboBoxRemainCredit2.setValue(null);
+        comboBoxRemainDebit2.setValue(null);
+
+        showAlert("Information" , "INFORMATION" , "Adding succesfully");
+
 
     }
 

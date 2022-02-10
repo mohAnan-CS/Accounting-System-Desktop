@@ -79,6 +79,15 @@ public class OneTransactionController implements Initializable {
             String ex1 = textAreaDescriptionCredit.getText();
             transactionModel.storeDebitCredit1(debitValue, creditValue, debitType, creditType,ex,ex1);
 
+            textFieldCredit.setText("");
+            textFieldDebit.setText("");
+            textAreaDescriptionCredit.setText("");
+            textAreaDescriptionDebit.setText("");
+            comboBoxCredit.setValue(null);
+            comboBoxDebit.setValue(null);
+
+            showAlert("Information" , "INFORMATION" , "Adding succesfully");
+
         }catch (SQLException sqlException){
             showAlert("Error" , "ERROR" , sqlException.getMessage());
         }
@@ -202,10 +211,6 @@ public class OneTransactionController implements Initializable {
             alert.setTitle(titleAlert);
             alert.setHeaderText(null);
             alert.setContentText(contentText);
-            DialogPane dialogPane = alert.getDialogPane();
-            dialogPane.getStylesheets().add(
-                    getClass().getResource("myDialogs.css").toExternalForm());
-            dialogPane.getStyleClass().add("myDialog");
             alert.showAndWait();
         }
 
