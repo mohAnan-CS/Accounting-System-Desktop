@@ -37,12 +37,12 @@ public class TrialBalanceController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        setAllCellValueFactory();
-        try {
-            fillLedgerList();
-        } catch (SQLException | IOException e) {
-            e.printStackTrace();
-        }
+//        setAllCellValueFactory();
+//        try {
+//            fillLedgerList();
+//        } catch (SQLException | IOException e) {
+//            e.printStackTrace();
+//        }
 
     }
 

@@ -116,9 +116,9 @@ FROM report]]>
 		</band>
 	</detail>
 	<columnFooter>
-		<band height="97" splitType="Stretch">
+		<band height="366" splitType="Stretch">
 			<staticText>
-				<reportElement x="240" y="5" width="167" height="30" uuid="86c3e4e0-7c96-4beb-a67e-e76e2dac50f1"/>
+				<reportElement x="240" y="30" width="167" height="30" uuid="86c3e4e0-7c96-4beb-a67e-e76e2dac50f1"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="14"/>
 				</textElement>
@@ -128,35 +128,35 @@ FROM report]]>
 				<reportElement x="340" y="0" width="99" height="1" uuid="92eebc4e-e500-4533-9ec9-c1ecfbfb7ace"/>
 			</line>
 			<textField>
-				<reportElement x="400" y="5" width="100" height="30" forecolor="#31BD36" uuid="13ececec-6bb2-4efd-9701-da867ca00442"/>
+				<reportElement x="400" y="30" width="100" height="30" forecolor="#31BD36" uuid="13ececec-6bb2-4efd-9701-da867ca00442"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$V{amount1}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="241" y="35" width="159" height="30" uuid="dba8965a-e802-4fa2-84f7-91e54a2be67e"/>
+				<reportElement x="241" y="60" width="159" height="30" uuid="dba8965a-e802-4fa2-84f7-91e54a2be67e"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="14"/>
 				</textElement>
 				<text><![CDATA[Total Revinue]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="400" y="35" width="100" height="30" forecolor="#31BD36" uuid="4bf22a79-e179-45ae-a7d8-77f341f7243b"/>
+				<reportElement x="400" y="60" width="100" height="30" forecolor="#31BD36" uuid="4bf22a79-e179-45ae-a7d8-77f341f7243b"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{revinue}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="241" y="65" width="159" height="30" uuid="3206239f-6117-4d3c-a309-c5a9ced8771e"/>
+				<reportElement x="241" y="90" width="159" height="30" uuid="3206239f-6117-4d3c-a309-c5a9ced8771e"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="14"/>
 				</textElement>
 				<text><![CDATA[Operating Income]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="400" y="65" width="100" height="30" forecolor="#31BD36" uuid="9872ac14-517a-4f41-85a8-6ef67da6a7d6"/>
+				<reportElement x="400" y="90" width="100" height="30" forecolor="#31BD36" uuid="9872ac14-517a-4f41-85a8-6ef67da6a7d6"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="12"/>
 				</textElement>
